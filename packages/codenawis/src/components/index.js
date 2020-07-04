@@ -55,9 +55,9 @@ export default connect(Theme);
 
 const globalStyles = css`
   body {
-    margin: 0;
-    font-family: "Poppins", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: "Poppins", Roboto,
+    "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   a,
   a:visited {

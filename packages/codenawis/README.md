@@ -2,15 +2,24 @@
 
 :fire: A WordPress CodeNawis Theme Project in React for Frontity.
 
+# More than Mars Theme
+1. Sharing Buttons
+2. Tags
+3. Categories
+4. Footer
+5. Grid System
+6. Better Pagination
+7. Search
+
 :zap: Check out the [demo site here](http://newschin.mymakarim.vercel.app//).
 
 # Demo 
 
 <p align="center">
-  <img alt="Frontity en la consola" src="../../assets/demo.png">
+  <img alt="Frontity en la consola" src="assets/demo.png">
 </p>
 <p align="left">
-  <img alt="Frontity en la consola" src="../../assets/demo-2.png">
+  <img alt="Frontity en la consola" src="assets/demo-2.png">
 </p>
 
 # Installation :wrench:

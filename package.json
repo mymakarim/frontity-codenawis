@@ -1,0 +1,27 @@
+{
+  "name": "codenawis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontity project by @mymakarim @codenawis",
+  "keywords": [
+    "frontity",
+    "frontity-theme",
+    "nextjs",
+    "react",
+    "wordpress"
+  ],
+  "scripts": {
+    "dev": "frontity dev",
+    "build": "frontity build",
+    "serve": "frontity serve"
+  },
+  "prettier": {},
+  "dependencies": {
+    "@frontity/core": "^1.7.2",
+    "@frontity/html2react": "^1.3.4",
+    "@frontity/codenawis": "./packages/codenawis",
+    "@frontity/tiny-router": "^1.2.1",
+    "@frontity/wp-source": "^1.8.0",
+    "frontity": "^1.10.0"
+  }
+}

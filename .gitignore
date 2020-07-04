@@ -1,0 +1,4 @@
+/.vercel
+/build
+/node_modules
+/now.json

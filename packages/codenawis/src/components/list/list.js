@@ -2,6 +2,7 @@ import React from "react";
 import { connect, styled, decode } from "frontity";
 import ListItem from "./list-item";
 import Pagination from "./pagination";
+import Container from '../utitlity/Container';
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -28,7 +29,7 @@ const List = ({ state }) => {
       <div>
         <br/>
         <Row>
-          {data.items.map(({ type, id }, index) => {
+          {data.items.map(({ type, id }) => {
             const item = state.source[type][id];
             // Render one Item component for each one.
             return <ListItem key={item.id} item={item} />
@@ -55,25 +56,4 @@ const Row = styled.div`
   flex-wrap:wrap;
   margin-right:-15px;
   margin-left:-15px
-`;
-const Container = styled.div`
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-top:40px;
-  padding-bottom:40px;
-  @media (min-width: 576px) {
-    max-width: 540px;
-  }
-  @media (min-width: 768px){
-    max-width: 720px;
-  }
-  @media (min-width: 992px){
-    max-width: 960px;
-  }
-  @media (min-width: 1200px){
-     max-width: 1140px;
-  }
 `;

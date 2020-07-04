@@ -1,20 +1,33 @@
 import React from "react";
-import { connect} from "frontity";
+import { connect, styled } from "frontity";
+import Container from './utitlity/Container';
+import Hr from './utitlity/Hr';
+import Logo from './utitlity/Logo';
 
 const Footer = ({ state }) => {
   return (
     <>
-      <div className="container py-5">
-          <h3><b className="text-black"><span className="text-danger">NEWS</span>CHIN</b></h3>
-        <hr className="bg-black" />
-        <div className="d-flex flex-row justify-content-between">
-          <p className="text-muted">{state.frontity.description}</p>
+      <Container>
+          <Logo color="black" />
+        <Hr color="black" />
+        <FlexBetween>
+          <Muted>{state.frontity.description}</Muted>
           <a href="https://github.com/mymakarim" target="_blank" rel="noopener noreferrer">with Love by @mymakarim @codenawis</a>
-        </div>
-      </div>
+        </FlexBetween>
+      </Container>
     </>
   );
 };
 
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Footer);
+
+const Muted = styled.p`
+  color: #bbb;
+`;
+
+const FlexBetween = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;

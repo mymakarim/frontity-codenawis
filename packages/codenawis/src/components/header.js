@@ -1,20 +1,22 @@
 import React from "react";
-import { connect, styled } from "frontity";
+import { connect, css } from "frontity";
 import Link from "./link";
 import Nav from "./nav";
 import MobileMenu from "./menu";
+import Container from './utitlity/Container'
+import Hr from './utitlity/Hr'
+import Logo from './utitlity/Logo'
 
 const Header = ({ state }) => {
   return (
     <>
-      <div className="container pt-4 pt-md-5 ">
+      <Container>
         <Link link="/">
-          <h3><b className="text-white"><span className="text-danger">NEWS</span>CHIN</b></h3>
+          <Logo color="white" />
         </Link>
-        <hr className="bg-white" />
-        {/* <p className="text-muted">{state.frontity.description}</p> */}
+        <Hr color="white" />
         <MobileMenu />
-      </div>
+      </Container>
       <Nav />
     </>
   );

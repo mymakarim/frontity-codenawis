@@ -6,14 +6,19 @@ import MobileMenu from "./menu";
 import Container from './utitlity/Container'
 import Hr from './utitlity/Hr'
 import Logo from './utitlity/Logo'
+import FlexBetween from './utitlity/FlexBetween';
+import SearchForm from './SearchForm';
 
 const Header = ({ state }) => {
   return (
     <>
       <Container>
-        <Link link="/">
-          <Logo color="white" />
-        </Link>
+        <FlexBetween>
+          <Link link="/">
+            <Logo color="white" />
+          </Link>
+          <SearchForm />
+        </FlexBetween>
         <Hr />
         <MobileMenu />
       </Container>

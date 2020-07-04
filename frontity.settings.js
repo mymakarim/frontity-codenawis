@@ -32,10 +32,6 @@ const settings = {
             [
               "MultiMedia",
               "/category/multimedia/"
-            ],
-            [
-              "About Us",
-              "/about/"
             ]
           ],
           "featured": {

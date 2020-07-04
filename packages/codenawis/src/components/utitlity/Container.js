@@ -29,6 +29,9 @@ const ContainerWrapper = styled.div`
   @media (min-width: 1200px){
      max-width: 1140px;
   }
+  img {
+    width: 100%;
+  }
 `;
 
 export default Container

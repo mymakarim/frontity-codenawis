@@ -5,6 +5,7 @@ import Tags from "./meta/tags";
 import Categories from "./meta/categories";
 import Author from "./meta/author";
 import PubDate from "./meta/date";
+import Container from "./utitlity/Container";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -47,7 +48,7 @@ const Post = ({ state, actions, libraries }) => {
 
       {/* Look at the settings to see if we should include the featured image */}
       {state.theme.featured.showOnPost && (
-        <img className="w-100 my-3" src={state.source.attachment[post.featured_media].source_url} alt=""/>
+        <img src={state.source.attachment[post.featured_media].source_url} alt=""/>
       )}
 
       {/* Render the content using the Html2React component so the HTML is processed
@@ -63,17 +64,14 @@ const Post = ({ state, actions, libraries }) => {
 
 export default connect(Post);
 
-const Container = styled.div`
-  width: 800px;
-  margin: 0;
-  padding: 24px;
-`;
-
 const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
   margin-bottom: 18px;
   color: rgba(12, 17, 43);
+  @media (max-width: 576px) {
+    font-size: 1.4rem;
+  }
 `;
 
 const AuthorBox = styled.div`
@@ -85,6 +83,8 @@ const AuthorBox = styled.div`
  * selectors to style that HTML.
  */
 const Content = styled.div`
+  width: 800px;
+  margin: 0 auto;
   color: rgba(12, 17, 43, 0.8);
   word-break: break-word;
 

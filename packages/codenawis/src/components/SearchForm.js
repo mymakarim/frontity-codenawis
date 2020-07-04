@@ -56,7 +56,7 @@ const Input = styled.input`
         outline: 0;
     }
 `;
-const Button = styled.button`
+const Button = styled.button` 
     padding: 10px 20px;
     border: 0;
 `;

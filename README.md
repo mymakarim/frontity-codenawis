@@ -80,3 +80,7 @@
 ## Authors
 
 1. [Yahya Makarim](https://instagram.com/codenawis)
+
+## License :scroll:
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  

@@ -7,10 +7,10 @@
 # Demo 
 
 <p align="center">
-  <img alt="Frontity en la consola" src="assets/demo.png">
+  <img alt="Frontity en la consola" src="../../assets/demo.png">
 </p>
 <p align="left">
-  <img alt="Frontity en la consola" src="assets/demo-2.png">
+  <img alt="Frontity en la consola" src="../../assets/demo-2.png">
 </p>
 
 # Installation :wrench:

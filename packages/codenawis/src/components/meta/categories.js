@@ -28,7 +28,7 @@ const Wrapper = styled.span`
   display: inline;
   & a {
     color: #dc3545;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     padding: 10px 0px 17px;
   }

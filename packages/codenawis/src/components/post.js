@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
-import Link from "./link";
 import List from "./list";
 import Tags from "./meta/tags";
 import Categories from "./meta/categories";
+import Author from "./meta/author";
+import PubDate from "./meta/date";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -12,9 +13,7 @@ const Post = ({ state, actions, libraries }) => {
   const post = state.source[data.type][data.id];
   // Get the data of the author.
   const author = state.source.author[post.author];
-  // Get a human readable date.
-  const date = new Date(post.date);
-
+  
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
@@ -38,16 +37,9 @@ const Post = ({ state, actions, libraries }) => {
         {data.isPost && (
           <div>
             {author && (
-              <StyledLink link={author.link}>
-                <Author>
-                  By <b>{author.name}</b>
-                </Author>
-              </StyledLink>
+              <Author authorId={post.author} />
             )}
-            <DateWrapper>
-              {" "}
-              on <b>{date.toDateString()}</b>
-            </DateWrapper>
+            <PubDate post={post} />
             <Categories cats={post.categories} />
           </div>
         )}
@@ -82,22 +74,6 @@ const Title = styled.h1`
   margin-top: 24px;
   margin-bottom: 18px;
   color: rgba(12, 17, 43);
-`;
-
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
-
-const Author = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-  display: inline;
-`;
-
-const DateWrapper = styled.p`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-  display: inline;
 `;
 
 /**
@@ -145,8 +121,12 @@ const Content = styled.div`
   }
 
   a {
-    color: rgb(31, 56, 197);
+    color: #dc3545;
     text-decoration: underline;
+  }
+  a:hover {
+    transition: all .5s;
+    color: black;
   }
 
   /* Input fields styles */

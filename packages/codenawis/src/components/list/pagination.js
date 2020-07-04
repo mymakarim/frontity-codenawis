@@ -172,6 +172,10 @@ const PageNumbers = styled(Link)`
   @media (min-width: 768px) {
     padding: 1rem;
   }
+  :hover {
+    transition: all .5s;
+    color: #dc3545;
+  }
 `;
 
 const PaginationLinks = styled(Link)`
@@ -180,6 +184,10 @@ const PaginationLinks = styled(Link)`
     padding: 1rem;
     ${({ position }) =>
       position === "next" ? "padding-right: 0;" : "padding-left: 0;"}
+  }
+  :hover {
+    transition: all .5s;
+    color: #dc3545;
   }
 `;
 

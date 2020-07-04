@@ -30,7 +30,7 @@ const List = ({ state }) => {
           {data.items.map(({ type, id }, index) => {
             const item = state.source[type][id];
             // Render one Item component for each one.
-            return <ItemRow key={item.id} item={item} />
+            return <ListItem key={item.id} item={item} />
           })}
         </div>
       </div>

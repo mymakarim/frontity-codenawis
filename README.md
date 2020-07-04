@@ -9,7 +9,7 @@
 <p align="center">
   <img alt="Frontity en la consola" src="assets/demo.png">
 </p>
-<p align="center">
+<p align="left">
   <img alt="Frontity en la consola" src="assets/demo-2.png">
 </p>
 

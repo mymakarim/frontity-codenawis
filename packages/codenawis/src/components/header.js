@@ -14,7 +14,7 @@ const Header = ({ state }) => {
         <Link link="/">
           <Logo color="white" />
         </Link>
-        <Hr color="white" />
+        <Hr />
         <MobileMenu />
       </Container>
       <Nav />

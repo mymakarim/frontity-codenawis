@@ -9,11 +9,12 @@ const Footer = ({ state }) => {
     <>
       <Container>
           <Logo color="black" />
-        <Hr color="black" />
+        <Hr />
         <FlexBetween>
           <Muted>{state.frontity.description}</Muted>
           <a href="https://github.com/mymakarim" target="_blank" rel="noopener noreferrer">with Love by @mymakarim @codenawis</a>
         </FlexBetween>
+        <br/>
       </Container>
     </>
   );
@@ -22,7 +23,7 @@ const Footer = ({ state }) => {
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Footer);
 
-const Muted = styled.p`
+const Muted = styled.span`
   color: #bbb;
 `;
 

@@ -1,22 +1,18 @@
 import { styled } from "frontity";
 
-const Hr = ({children, color}) => {
+const Hr = ({children}) => {
     return (
-        color === "white" 
-        ? <HrWhite>
+          <HrCss>
             {children}
-          </HrWhite> 
-        : <HrBlack>
-            {children}
-        </HrBlack> 
+          </HrCss> 
     )
 }
 
-const HrBlack = styled.hr`
-  background-color: #eee;
-`;
-const HrWhite = styled.hr`
-  background-color: #222;
+const HrCss = styled.hr`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid #333;
 `;
 
 export default Hr

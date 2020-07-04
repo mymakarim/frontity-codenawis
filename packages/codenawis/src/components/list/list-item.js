@@ -58,7 +58,7 @@ const Article = styled.div`
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   max-width:750px;
   margin:0 auto;
-  height:320px;
+  height:330px;
   background-color: white;
   margin-bottom: 40px;
   border-radius: 5px;
@@ -75,7 +75,7 @@ const ColMd4 = styled.div`
   @media (min-width: 768px){
       -ms-flex: 0 0 33.333333%;
       flex: 0 0 33.333333%;
-      max-width: 33.333333%;
+      max-width: 30.333333%;
   }
 `;
 

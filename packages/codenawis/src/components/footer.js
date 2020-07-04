@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import Container from './utitlity/Container';
 import Hr from './utitlity/Hr';
 import Logo from './utitlity/Logo';
+import FlexBetween from './utitlity/FlexBetween';
 
 const Footer = ({ state }) => {
   return (
@@ -25,13 +26,4 @@ export default connect(Footer);
 
 const Muted = styled.span`
   color: #bbb;
-`;
-
-const FlexBetween = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  @media(max-width: 570px){
-    flex-direction: column !important;
-  }
 `;

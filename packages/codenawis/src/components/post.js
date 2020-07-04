@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { connect, styled } from "frontity";
+import { connect, styled, Head } from "frontity";
 import List from "./list";
 import Tags from "./meta/tags";
 import Categories from "./meta/categories";
 import Author from "./meta/author";
 import PubDate from "./meta/date";
 import Container from "./utitlity/Container";
+import FlexBetween from "./utitlity/FlexBetween";
+import SharingButtons from "./meta/SharingButtons";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -31,18 +33,38 @@ const Post = ({ state, actions, libraries }) => {
   // Load the post, but only if the data is ready.
   return data.isReady ? (
     <Container>
-      <div>
-        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+    <Head>
+          <meta name="description" content={state.frontity.description} />
+          <html lang="en" />
+          
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content={state.frontity.url} />
+          <meta property="og:title" content={ post.title.rendered } />
+          <meta property="og:description" content={ post.excerpt.rendered } />
+          <meta property="og:image" content={state.source.attachment[post.featured_media].source_url} />
 
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content={state.frontity.url} />
+          <meta property="twitter:title" content={ post.title.rendered } />
+          <meta property="twitter:description" content={ post.excerpt.rendered } />
+          <meta property="twitter:image" content={state.source.attachment[post.featured_media].source_url} ></meta>
+    </Head>
+      <div>
+      
+        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+        
         {/* Only display author and date on posts */}
         {data.isPost && (
-          <AuthorBox>
-            {author && (
-              <Author authorId={post.author} />
-            )}
-            <PubDate post={post} />
-            <Categories cats={post.categories} />
-          </AuthorBox>
+          <FlexBetween>
+            <AuthorBox>
+              {author && (
+                <Author authorId={post.author} />
+              )}
+              <PubDate post={post} />
+              <Categories cats={post.categories} />
+            </AuthorBox>
+            <SharingButtons link={state.router.link} title={post.title.rendered} />
+          </FlexBetween>
         )}
       </div>
 
@@ -56,8 +78,17 @@ const Post = ({ state, actions, libraries }) => {
       <Content>
         <Html2React html={post.content.rendered} />
         <br></br>
-        <Tags tags={post.tags} />
+        <FlexBetween>
+          <div>
+            <Tags tags={post.tags} />
+          </div>
+          <SharingButtons link={state.router.link} title={post.title.rendered} />
+        </FlexBetween>
       </Content>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </Container>
   ) : null;
 };

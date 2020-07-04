@@ -2,8 +2,8 @@ import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
 
-const marsTheme = {
-  name: "@frontity/mars-theme",
+const codeawisTheme = {
+  name: "@frontity/codenawis",
   roots: {
     /**
      *  In Frontity, any package can add React components to the site.
@@ -50,4 +50,4 @@ const marsTheme = {
   },
 };
 
-export default marsTheme;
+export default codeawisTheme;

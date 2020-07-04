@@ -1,6 +1,5 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Link from "../link";
 
 const PubDate = ({ state, post }) => {
   const date = new Date(post.date);
@@ -8,7 +7,7 @@ const PubDate = ({ state, post }) => {
   return (
     <Wrapper>
         {" on "}
-      <Link link={post.link}>{date.toDateString()}</Link>
+      <span>{date.toDateString()}</span>
     </Wrapper>
   );
 };
@@ -17,7 +16,7 @@ export default connect(PubDate);
 
 const Wrapper = styled.span`
   display: inline;
-  & a {
+  & span {
     font-weight: 600;
     font-size: 1rem;
   }

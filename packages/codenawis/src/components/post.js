@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import List from "./list";
-import FeaturedMedia from "./featured-media";
+import Tags from "./meta/tags";
+import Categories from "./meta/categories";
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -47,6 +48,7 @@ const Post = ({ state, actions, libraries }) => {
               {" "}
               on <b>{date.toDateString()}</b>
             </DateWrapper>
+            <Categories cats={post.categories} />
           </div>
         )}
       </div>
@@ -60,6 +62,8 @@ const Post = ({ state, actions, libraries }) => {
        by the processors we included in the libraries.html2react.processors array. */}
       <Content>
         <Html2React html={post.content.rendered} />
+        <br></br>
+        <Tags tags={post.tags} />
       </Content>
     </Container>
   ) : null;
@@ -76,7 +80,7 @@ const Container = styled.div`
 const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
   color: rgba(12, 17, 43);
 `;
 

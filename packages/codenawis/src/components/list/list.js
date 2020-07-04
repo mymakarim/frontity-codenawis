@@ -1,7 +1,6 @@
 import React from "react";
 import { connect, styled, decode } from "frontity";
-import ItemRow from "./Item-row";
-import Item from "./list-item";
+import ListItem from "./list-item";
 import Pagination from "./pagination";
 
 const List = ({ state }) => {

@@ -9,12 +9,14 @@ const Container = ({children}) => {
 }
 
 const ContainerWrapper = styled.div`
+  box-sizing: border-box;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  padding-top:30px;
+  padding-top: 10px;
+  overflow: hidden;
   @media (min-width: 576px) {
     max-width: 540px;
   }

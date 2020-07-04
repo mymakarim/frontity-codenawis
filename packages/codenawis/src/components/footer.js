@@ -31,4 +31,7 @@ const FlexBetween = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media(max-width: 570px){
+    flex-direction: column !important;
+  }
 `;

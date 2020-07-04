@@ -35,13 +35,13 @@ const Post = ({ state, actions, libraries }) => {
 
         {/* Only display author and date on posts */}
         {data.isPost && (
-          <div>
+          <AuthorBox>
             {author && (
               <Author authorId={post.author} />
             )}
             <PubDate post={post} />
             <Categories cats={post.categories} />
-          </div>
+          </AuthorBox>
         )}
       </div>
 
@@ -74,6 +74,10 @@ const Title = styled.h1`
   margin-top: 24px;
   margin-bottom: 18px;
   color: rgba(12, 17, 43);
+`;
+
+const AuthorBox = styled.div`
+  margin-bottom: 10px;
 `;
 
 /**

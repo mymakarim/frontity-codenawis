@@ -114,7 +114,7 @@ const AuthorBox = styled.div`
  * selectors to style that HTML.
  */
 const Content = styled.div`
-  width: 800px;
+  max-width: 800px;
   margin: 0 auto;
   color: rgba(12, 17, 43, 0.8);
   word-break: break-word;

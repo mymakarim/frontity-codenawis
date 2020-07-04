@@ -50,7 +50,7 @@ const Form = styled.form`
 const Input = styled.input`
     border: 0;
     padding:10px;
-
+    width: 100%;
     :focus {
         border: 0;
         outline: 0;

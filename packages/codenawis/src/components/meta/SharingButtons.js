@@ -4,6 +4,7 @@ import {styled} from 'frontity';
 const SharingButtons = ({link, title}) => {
     return (
         <SharingButton>
+          Sharing is Caring: 
             <a target="_blank" href={`http://www.facebook.com/share.php?u=https://newschin.mymakarim.vercel.app/${link}&amp;title=${title}`}>
               <svg className="svg-inline--fa fa-facebook fa-w-14" height="20px" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
                 <path fill="currentColor" d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"></path></svg>
@@ -26,5 +27,9 @@ const SharingButton = styled.div`
   a {
     display: inline-block;
     margin:0px 10px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px 0px;
   }
 `;

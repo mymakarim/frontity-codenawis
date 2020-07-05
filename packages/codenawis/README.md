@@ -1,25 +1,26 @@
 # CodeNawis Frontity Theme Project :art:
 
-:fire: A WordPress CodeNawis Theme Project in React for Frontity.
+:fire: A Frontity Theme for Wordpress site.
 
 # More than Mars Theme
 1. Sharing Buttons
-2. Tags
-3. Categories
-4. Footer
-5. Grid System
-6. Better Pagination
-7. Search
+2. Posts by category in Homepage
+3. Grid System
+4. Search
+5. Categories in Navbar
+6. Tags in post page
+7. Better Pagination
+8. Footer
 
 :zap: Check out the [demo site here](http://newschin.mymakarim.vercel.app//).
 
 # Demo 
 
 <p align="center">
-  <img alt="Frontity en la consola" src="assets/demo.png">
+  <img alt="Frontity-codenawis" src="assets/demo.png">
 </p>
 <p align="left">
-  <img alt="Frontity en la consola" src="assets/demo-2.png">
+  <img alt="Frontity-codenawis" src="assets/demo-2.png">
 </p>
 
 # Installation :wrench:
@@ -78,9 +79,11 @@
     },
 ```
 
-3. Remove your previous theme (`mars-theme`?) from `frontity-settings.js`.
-4. `npx frontity dev` (from project's root directory).
-5. Your site will be available at `http://localhost:3000/`.
+3. go to `packages/codenawis/src/components/utility/config/homepageSections.js` and put the `categoryID` and `slug` of the categories you want them to appear as sections in the homepage
+
+4. Remove your previous theme (`mars-theme`?) from `frontity-settings.js`.
+5. `npx frontity dev` (from project's root directory).
+6. Your site will be available at `http://localhost:3000/`.
 
 ## Credits :white_flower:
 

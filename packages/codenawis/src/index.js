@@ -1,7 +1,7 @@
 import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
-import {categoriesWidgetsHome} from './components/utitlity/config/categories';
+import {categoriesWidgetsHome} from './components/utitlity/config/homepageSections';
 
 const codeawisTheme = {
   name: "@frontity/codenawis",

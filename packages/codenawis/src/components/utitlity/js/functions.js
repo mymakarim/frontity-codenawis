@@ -1,4 +1,4 @@
-import {categoriesWidgetsHome} from '../config/categories'
+import {categoriesWidgetsHome} from '../config/homepageSections'
 
 // export const getCategoriesIds = categories => Object.keys(categories)
 // export const getCategoriesValues = categories => Object.keys(categories)

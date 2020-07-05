@@ -1,6 +1,7 @@
 import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
+import {categoriesWidgetsHome} from './components/utitlity/config/categories';
 
 const codeawisTheme = {
   name: "@frontity/codenawis",
@@ -37,6 +38,17 @@ const codeawisTheme = {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
+      beforeSSR: async ({ state, actions }) => {
+        if (state.router.link === "/") {
+          console.log(state.router.link)
+          console.log('getting data from beforeSSR...')
+          // await actions.source.fetch(`/category/featured/`);
+          await Promise.all(
+            Object.values(categoriesWidgetsHome)
+              .map(category => actions.source.fetch(`/category/${category}/`))
+          )
+        }
+      }
     },
   },
   libraries: {

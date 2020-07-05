@@ -3,10 +3,14 @@ import { connect, styled, decode } from "frontity";
 import ListItem from "./list-item";
 import Pagination from "./pagination";
 import Container from '../utitlity/Container';
+import Row from '../utitlity/Row';
+import CardSection from './sections/cardSection';
+import {getPostsGroupedByCategory} from '../utitlity/js/functions';
 
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
+  const postsPerCategory = getPostsGroupedByCategory(state.source)
   
   return (
     <Container>
@@ -35,15 +39,25 @@ const List = ({ state }) => {
       {/* Iterate over the items of the list. */}
       <div>
         <br/>
-        <Row>
-          {data.items.map(({ type, id }) => {
-            const item = state.source[type][id];
-            // Render one Item component for each one.
-            return <ListItem key={item.id} item={item} />
-          })}
-        </Row>
+          {data.route === '/' 
+          ? postsPerCategory.map((postsCategory, index) => {
+            if(postsCategory.category){
+              console.log(postsCategory.category.name);
+              return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+            }else{
+              return <p key={index}></p>; 
+            }
+          })
+          :<Row>
+            {data.items.map(({ type, id }) => {
+              const item = state.source[type][id];
+              // Render one Item component for each one.
+              return <ListItem key={item.id} item={item} />
+            })} 
+          </Row>
+          }
       </div>
-      <Pagination />
+      {data.route === '/' ? null : <Pagination /> }
     </Container>
   );
 };
@@ -58,10 +72,4 @@ const Header = styled.h3`
 `;
 const Bold = styled.b`
   font-weight: 700;
-`;
-const Row = styled.div`
-  display:flex;
-  flex-wrap:wrap;
-  margin-right:-15px;
-  margin-left:-15px
 `;

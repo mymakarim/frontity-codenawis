@@ -1,6 +1,6 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Link from "../link";
+import HoverLink from "../utitlity/HoverLink";
 import FeaturedMedia from "../featured-media";
 import PubDate from '../meta/date';
 import Author from '../meta/author';
@@ -20,7 +20,6 @@ const ListItem = ({ state, item }) => {
   return (
         <ColMd4>
             <Article>
-                
                 <HoverLink link={item.link}>
                 {state.theme.featured.showOnList && (
                   <FeaturedMedia id={item.featured_media} />
@@ -42,17 +41,6 @@ const ListItem = ({ state, item }) => {
 
 // Connect the Item to gain access to `state` as a prop
 export default connect(ListItem);
-
-const HoverLink = styled(Link)`
-  a, a:visted {
-    color: black !important;
-  }
-  :hover {
-    transition: all .5s;
-    color: #dc3545 !important;
-    text-decoration: none;
-  }
-`;
 
 const Article = styled.div`
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);

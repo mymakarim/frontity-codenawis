@@ -1,8 +1,8 @@
 {
   "name": "@frontity/codenawis-theme",
-  "version": "1.4.3",
+  "version": "1.0.0",
   "description": "A frontity theme by @mymakarim @codenawis",
-  "author": "Imran Sayed, Smit Patadiya",
+  "author": "Yahya Makarim",
   "keywords": [
     "frontity",
     "frontity-theme",

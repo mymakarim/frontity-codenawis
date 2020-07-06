@@ -1,42 +1,42 @@
 export const categoryWidgets = [
   {
     id: 13,
-    name: "news",
+    slug: "news",
     order: 1
   },
   {
     id: 41,
-    name: "featured",
+    slug: "featured",
     order: 2
   },
   {
     id: 379,
-    name: "book-review",
+    slug: "book-review",
     order: 3
   },
   {
     id: 276,
-    name: "exclusive-interviews",
+    slug: "exclusive-interviews",
     order: 4
   },
   {
     id: 8,
-    name: "multimedia",
+    slug: "multimedia",
     order: 5
   },
   {
     id: 7,
-    name: "opinion",
+    slug: "opinion",
     order: 6
   },
   {
     id: 69,
-    name: "spotlight",
+    slug: "spotlight",
     order: 7
   },
   {
     id: 319,
-    name: "opinion/letters",
+    slug: "opinion/letters",
     order: 8
   }
 ]

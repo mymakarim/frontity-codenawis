@@ -45,7 +45,7 @@ const codeawisTheme = {
           // await actions.source.fetch(`/category/featured/`);
           await Promise.all(
               categoryWidgets.map(categoryWidget=>{
-                const category = categoryWidget.name;
+                const category = categoryWidget.slug;
                 return actions.source.fetch(`/category/${category}/`)
               })
           )

@@ -55,7 +55,6 @@ const Post = ({ state, actions, libraries }) => {
       <PostContainer>
       
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-        <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} ></p>
         {/* Only display author and date on posts */}
         {data.isPost && (
           <MY2>

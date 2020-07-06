@@ -4,13 +4,14 @@
 
 # More than Mars Theme
 1. Sharing Buttons
-2. Posts by category in Homepage
-3. Grid System
-4. Search
-5. Categories in Navbar
-6. Tags in post page
-7. Better Pagination
-8. Footer
+2. Category based Posts in Homepage
+3. Comment Section in Single Post Page
+4. Grid System
+5. Search
+6. Categories in Navbar
+7. Tags in post page
+8. Better Pagination
+9. Footer
 
 :zap: Check out the [demo site here](http://newschin.mymakarim.vercel.app//).
 

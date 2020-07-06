@@ -5,7 +5,8 @@
     276: "exclusive-interviews",
     8: "multimedia",
     7: "opinion",
-    69: "spotlight"
+    69: "spotlight",
+    319: "opinion/letters"
   }
 
   

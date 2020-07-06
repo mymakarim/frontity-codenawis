@@ -2,3 +2,4 @@
 /build
 /node_modules
 /now.json
+.vercel

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect, styled, Head } from "frontity";
 import List from "./list";
+import Comments from "./comments";
 import Tags from "./meta/tags";
 import Categories from "./meta/categories";
 import Author from "./meta/author";
@@ -85,6 +86,9 @@ const Post = ({ state, actions, libraries }) => {
           <SharingButtons link={state.router.link} title={post.title.rendered} />
         </FlexBetween>
       </Content>
+      <br/>
+      <br/>
+      <Comments />
       <br/>
       <br/>
       <br/>

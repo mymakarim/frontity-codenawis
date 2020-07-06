@@ -11,6 +11,7 @@ const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
   const postsPerCategory = getPostsGroupedByCategory(state.source)
+  console.log("POSTS_PER_CATEGORY", postsPerCategory);
   
   return (
     <Container>
@@ -41,12 +42,11 @@ const List = ({ state }) => {
         <br/>
           {data.route === '/' 
           ? postsPerCategory.map((postsCategory, index) => {
-            if(postsCategory.category){
-              console.log(postsCategory.category.name);
-              return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
-            }else{
-              return <p key={index}></p>;
-            }
+              if(postsCategory.category){
+                return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+              }else{
+                return <p key={index}></p>;
+              }
           })
           :<Row>
             {data.items.map(({ type, id }) => {

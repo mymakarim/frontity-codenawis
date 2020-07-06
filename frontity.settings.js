@@ -2,7 +2,7 @@ const settings = {
   "name": "newschin",
   "state": {
     "frontity": {
-      "url": "https://kabulnow.af/",
+      "url": "https://newschin.mymakarim.vercel.app",
       "title": "NewsChin",
       "description": "A NextJs clone of NewsChin.com"
     }

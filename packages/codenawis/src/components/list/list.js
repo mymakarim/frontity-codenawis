@@ -45,7 +45,7 @@ const List = ({ state }) => {
               console.log(postsCategory.category.name);
               return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
             }else{
-              return <p key={index}></p>; 
+              return <p key={index}></p>;
             }
           })
           :<Row>

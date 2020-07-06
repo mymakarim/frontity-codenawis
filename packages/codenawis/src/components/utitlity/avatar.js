@@ -13,4 +13,4 @@ const AvatarCss = styled.img`
   background-color: #eee;
 `;
 
-export default Container
+export default Avatar

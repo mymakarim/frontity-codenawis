@@ -1,4 +1,4 @@
-export const categoryWidgtes = [
+export const categoryWidgets = [
   {
     id: 13,
     name: "news",

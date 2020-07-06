@@ -1,7 +1,7 @@
 import Theme from "./components";
 import image from "@frontity/html2react/processors/image";
 import iframe from "@frontity/html2react/processors/iframe";
-import {categoriesWidgetsHome} from './components/utitlity/config/homepageSections';
+import {categoryWidgets} from './components/utitlity/config/homepageSections';
 
 const codeawisTheme = {
   name: "@frontity/codenawis",
@@ -44,8 +44,10 @@ const codeawisTheme = {
           console.log('getting data from beforeSSR...')
           // await actions.source.fetch(`/category/featured/`);
           await Promise.all(
-            Object.values(categoriesWidgetsHome)
-              .map(category => actions.source.fetch(`/category/${category}/`))
+              categoryWidgets.map(categoryWidget=>{
+                const category = categoryWidget.name;
+                return actions.source.fetch(`/category/${category}/`)
+              })
           )
         }
       }

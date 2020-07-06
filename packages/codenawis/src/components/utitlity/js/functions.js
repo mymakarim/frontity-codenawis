@@ -1,11 +1,11 @@
-import {categoryWidgtes} from '../config/homepageSections'
+import {categoryWidgets} from '../config/homepageSections'
 
 // export const getCategoriesIds = categories => Object.keys(categories)
 // export const getCategoriesValues = categories => Object.keys(categories)
 
 export const getPostsGroupedByCategory = source =>  {
 
-  return categoryWidgtes.map(categoryWidget=>{
+  return categoryWidgets.map(categoryWidget=>{
     const posts = getPostsFromCategory(source, categoryWidget.id).slice(0,3)
     const category = source.category[categoryWidget.id]
     return {order: categoryWidget.order, posts, category}

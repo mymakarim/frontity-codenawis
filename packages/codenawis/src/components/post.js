@@ -3,11 +3,11 @@ import { connect, styled, Head } from "frontity";
 import List from "./list";
 import Comments from "./comments";
 import Tags from "./meta/tags";
-import Categories from "./meta/categories";
 import Author from "./meta/author";
 import PubDate from "./meta/date";
 import Container from "./utitlity/Container";
 import FlexBetween from "./utitlity/FlexBetween";
+import FlexCenter from "./utitlity/FlexCenter";
 import SharingButtons from "./meta/SharingButtons";
 
 const Post = ({ state, actions, libraries }) => {
@@ -20,7 +20,7 @@ const Post = ({ state, actions, libraries }) => {
   
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
-
+  console.log("AuthorAvatar", author.avatar_urls[96]);
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -50,29 +50,35 @@ const Post = ({ state, actions, libraries }) => {
           <meta property="twitter:image" content={state.source.attachment[post.featured_media].source_url} ></meta>
           <meta name="twitter:card" content="summary_large_image" />
     </Head>
-      <div>
+      <PostContainer>
       
         <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-        
+        <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} ></p>
         {/* Only display author and date on posts */}
         {data.isPost && (
           <FlexBetween>
             <AuthorBox>
               {author && (
-                <Author authorId={post.author} />
+                <FlexCenter>
+                  <Avatar src={author.avatar_urls[96]} width="80px" alt=""/>
+                  <div>
+                    <Author authorId={post.author} /><br />
+                    <PubDate post={post} />
+                  </div>
+                </FlexCenter>
               )}
-              <PubDate post={post} />
-              <Categories cats={post.categories} />
+              {/* <Categories cats={post.categories} /> */}
             </AuthorBox>
             <SharingButtons link={state.router.link} title={post.title.rendered} />
           </FlexBetween>
         )}
-      </div>
-
-      {/* Look at the settings to see if we should include the featured image */}
-      {state.theme.featured.showOnPost && (
-        <img src={state.source.attachment[post.featured_media].source_url} alt=""/>
-      )}
+      
+        <br/>
+        {/* Look at the settings to see if we should include the featured image */}
+        {state.theme.featured.showOnPost && (
+          <img src={state.source.attachment[post.featured_media].source_url} alt=""/>
+        )}
+      </PostContainer>
 
       {/* Render the content using the Html2React component so the HTML is processed
        by the processors we included in the libraries.html2react.processors array. */}
@@ -99,6 +105,21 @@ const Post = ({ state, actions, libraries }) => {
 
 export default connect(Post);
 
+const Avatar = styled.img`
+  width: 65px !important;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: #eee;
+`;
+
+const PostContainer = styled.div`
+  max-width: 850px;
+  margin: 0 auto;
+  p {
+    line-height: 1.8;
+  }  
+`;
+
 const Title = styled.h1`
   margin: 0;
   margin-top: 24px;
@@ -118,7 +139,7 @@ const AuthorBox = styled.div`
  * selectors to style that HTML.
  */
 const Content = styled.div`
-  max-width: 800px;
+  max-width: 750px;
   margin: 0 auto;
   color: rgba(12, 17, 43, 0.8);
   word-break: break-word;

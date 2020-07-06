@@ -45,6 +45,10 @@ const Form = styled.form`
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  @media(max-width: 570px){
+    width: 100%;
+    margin-right: 24px;  
+  }
 `;
 
 const Input = styled.input`

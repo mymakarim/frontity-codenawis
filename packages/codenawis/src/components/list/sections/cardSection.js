@@ -1,18 +1,17 @@
 import React from 'react'
 import Row from '../../utitlity/Row';
 import ListItem from '../list-item';
-import { connect } from "frontity";
+import { connect, css } from "frontity";
 import HoverLink from '../../utitlity/HoverLink';
-import FlexBetween from '../../utitlity/FlexBetween';
 
 const cardSection = ({state, postsCategory, category}) => {
     return (
         <>
           <HoverLink link={category.link}>
-            <FlexBetween>
+            <div css={css`display: flex; justify-content: space-between; align-items: center;`} >
               <h3>{postsCategory.category.name}</h3>
               <span>See All</span>
-            </FlexBetween>
+            </div>
           </HoverLink>
           <Row>
             {postsCategory.posts.map((post) => {

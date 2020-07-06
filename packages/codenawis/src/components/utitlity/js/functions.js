@@ -10,7 +10,7 @@ export const getPostsGroupedByCategory = source =>  {
     const category = source.category[categoryWidget.id]
     return {order: categoryWidget.order, posts, category}
   });
-
+  
 }
 
 export const getPostsFromCategory = ({ post }, categoryId) =>

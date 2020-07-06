@@ -18,5 +18,6 @@ const FlexBetweenCss = styled.div`
   align-items: center;
   @media(max-width: 570px){
     flex-direction: column !important;
+    align-items: flex-start;
   }
 `;

@@ -28,7 +28,6 @@ const authorBox = ({author}) => {
 const AuthorBoxCss = styled.div`
   margin: 30px 0px;
   border: 1px solid #eee;
-  // box-shadow: 0 0 10px rgba(0,0,0,.2);
   padding: 40px 70px;
   img {
     width: 180px !important;
@@ -40,6 +39,12 @@ const AuthorBoxCss = styled.div`
   a: hover {
     transition: all .5s;
     color: black;
+  }
+  @media(max-width: 570px){
+    img {
+      width: 70px !important;
+    }
+    padding: 20px;
   }
 `;
 

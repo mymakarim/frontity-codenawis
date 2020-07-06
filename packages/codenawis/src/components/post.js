@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import { connect, styled, Head } from "frontity";
 import List from "./list";
 import Comments from "./comments";
+import Link from "./link";
 import Tags from "./meta/tags";
 import Author from "./meta/author";
 import PubDate from "./meta/date";
+import AuthorBox from "./meta/authorBox";
 import Container from "./utitlity/Container";
 import FlexBetween from "./utitlity/FlexBetween";
 import FlexCenter from "./utitlity/FlexCenter";
@@ -20,7 +22,7 @@ const Post = ({ state, actions, libraries }) => {
   
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
-  console.log("AuthorAvatar", author.avatar_urls[96]);
+  console.log("Author", author);
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -56,24 +58,22 @@ const Post = ({ state, actions, libraries }) => {
         <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} ></p>
         {/* Only display author and date on posts */}
         {data.isPost && (
-          <FlexBetween>
-            <AuthorBox>
-              {author && (
-                <FlexCenter>
-                  <Avatar src={author.avatar_urls[96]} width="80px" alt=""/>
-                  <div>
-                    <Author authorId={post.author} /><br />
-                    <PubDate post={post} />
-                  </div>
-                </FlexCenter>
-              )}
-              {/* <Categories cats={post.categories} /> */}
-            </AuthorBox>
-            <SharingButtons link={state.router.link} title={post.title.rendered} />
-          </FlexBetween>
+          <MY2>
+            <FlexBetween>
+                {author && (
+                  <FlexCenter>
+                    <Avatar src={author.avatar_urls[96]} width="80px" alt=""/>
+                    <div>
+                      <Author authorId={post.author} /><br />
+                      <PubDate post={post} />
+                    </div>
+                  </FlexCenter>
+                )}
+                {/* <Categories cats={post.categories} /> */}
+              <SharingButtons link={state.router.link} title={post.title.rendered} />
+            </FlexBetween>
+          </MY2>
         )}
-      
-        <br/>
         {/* Look at the settings to see if we should include the featured image */}
         {state.theme.featured.showOnPost && (
           <img src={state.source.attachment[post.featured_media].source_url} alt=""/>
@@ -92,6 +92,13 @@ const Post = ({ state, actions, libraries }) => {
           <SharingButtons link={state.router.link} title={post.title.rendered} />
         </FlexBetween>
       </Content>
+      {/* Author Box */}
+      <MY2>
+        {data.isPost && (
+            <AuthorBox author={author} />
+        )}
+      </MY2>
+      
       <br/>
       <br/>
       <Comments />
@@ -104,13 +111,6 @@ const Post = ({ state, actions, libraries }) => {
 };
 
 export default connect(Post);
-
-const Avatar = styled.img`
-  width: 65px !important;
-  border-radius: 50%;
-  margin-right: 10px;
-  background-color: #eee;
-`;
 
 const PostContainer = styled.div`
   max-width: 850px;
@@ -130,8 +130,8 @@ const Title = styled.h1`
   }
 `;
 
-const AuthorBox = styled.div`
-  margin-bottom: 10px;
+const MY2 = styled.div`
+  margin: 20px 0px;
 `;
 
 /**

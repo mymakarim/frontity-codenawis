@@ -7,7 +7,6 @@ const Author = ({ state, authorId }) => {
 
   return (
     <span>
-        {"by "}
       <HoverLink link={author.link}>
         <b>{author.name}</b>
       </HoverLink>

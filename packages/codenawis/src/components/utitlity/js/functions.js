@@ -22,3 +22,6 @@ export const createMarkupObject = renderedHtml => ({__html: renderedHtml})
 
 export const getRandomColor = () =>
   '#' + new Array(6).fill(0).map(digit => '0123456789ABCDEF'[Math.floor(Math.random() * 16)]).join('')  
+
+
+  

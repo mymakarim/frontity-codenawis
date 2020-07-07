@@ -2,6 +2,8 @@ import React from "react";
 import { connect, styled } from "frontity";
 import HoverLink from "../utitlity/HoverLink";
 import Article from "../utitlity/Article";
+import CardTitle from "../utitlity/cardTitle";
+import CardContent from "../utitlity/cardContent";
 import FeaturedMedia from "../featured-media";
 import PubDate from '../meta/date';
 import Author from '../meta/author';
@@ -31,16 +33,16 @@ import Author from '../meta/author';
                   <div>
                     <div>
                       <HoverLink link={item.link}>
-                        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
+                        <CardTitle title={item.title.rendered} />
                       </HoverLink>
                     </div>
-                    <Meta>
+                    <CardContent>
                       {author && (
                         <Author authorId={item.author} />
                       )}
-                      &nbsp;&nbsp;
+                      &nbsp;-&nbsp;
                       <PubDate post={item} />
-                    </Meta>
+                    </CardContent>
                   </div>
                 </Flex>
             </Article>
@@ -52,13 +54,4 @@ export default connect(ListItemHorizontal);
 
 const Flex = styled.div`
   display: flex;
-`;
-const Title = styled.h2`
-  font-weight: 500;
-  font-size: 1rem;
-  margin: 1rem 1.5rem;
-`;
-const Meta = styled.div`
-  margin:0 1.5rem;
-  padding-bottom: 1.5rem;
 `;

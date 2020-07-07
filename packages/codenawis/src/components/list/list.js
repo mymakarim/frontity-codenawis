@@ -6,7 +6,7 @@ import Container from '../utitlity/Container';
 import Row from '../utitlity/Row';
 import Section444 from './sections/section444';
 import Section633 from './sections/section633';
-import Section64 from './sections/section64';
+import Section66 from './sections/section66';
 import {getPostsGroupedByCategory} from '../utitlity/js/functions';
 
 const List = ({ state }) => {
@@ -47,9 +47,11 @@ const List = ({ state }) => {
               if(postsCategory.category){
                 switch (postsCategory.category.slug) {
                   case "featured":
-                    return <Section64 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                    return <Section66 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgetLeft="listItem" widgetRight="listItemHorizontal" />
                   case "multimedia":
                     return <Section633 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                  case "news":
+                    return <Section444 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widget="listItemHorizontalSmall" />
                   default:
                     return <Section444 key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
                 }

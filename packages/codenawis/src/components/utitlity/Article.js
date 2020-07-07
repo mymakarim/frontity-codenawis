@@ -33,10 +33,6 @@ const ArticleCss = styled.div`
     margin-bottom: 40px;
   }
   transition: all .2s;
-  img {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
 
   &:hover {
     transition: all .2s;

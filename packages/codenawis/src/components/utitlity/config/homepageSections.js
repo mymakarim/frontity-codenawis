@@ -1,19 +1,19 @@
 export const categoryWidgets = [
   {
-    id: 8,
-    slug: "multimedia",
+    id: 41,
+    slug: "featured",
     order: 1,
-    length: 3
+    length: 4
   },
   {
     id: 13,
     slug: "news",
     order: 2,
-    length: 3
+    length: 6
   },
   {
-    id: 41,
-    slug: "featured",
+    id: 8,
+    slug: "multimedia",
     order: 3,
     length: 3
   },

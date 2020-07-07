@@ -1,9 +1,9 @@
 import React from 'react'
 import {styled} from 'frontity';
 
-const FlexBetween = ({children}) => {
+const FlexBetween = ({children, direction="row"}) => {
     return (
-        <FlexBetweenCss>
+        <FlexBetweenCss className={direction}>
             {children}
         </FlexBetweenCss>
     )
@@ -16,4 +16,7 @@ const FlexBetweenCss = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  &.column {
+    flex-direction: column;
+  }
 `;

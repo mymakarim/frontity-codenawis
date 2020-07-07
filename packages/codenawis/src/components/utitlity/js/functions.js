@@ -6,9 +6,6 @@ import {categoryWidgets} from '../config/homepageSections'
 export const getPostsGroupedByCategory = source =>  {
 
   return categoryWidgets.map(categoryWidget=>{
-    if(13 === categoryWidget.id){
-      console.log("News", getPostsFromCategory(source, categoryWidget.id).reverse());
-    }
     const posts = getPostsFromCategory(source, categoryWidget.id).reverse().slice(0,categoryWidget.length)
     const category = source.category[categoryWidget.id]
     return {order: categoryWidget.order, posts, category}

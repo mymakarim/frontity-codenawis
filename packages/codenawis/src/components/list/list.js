@@ -5,16 +5,17 @@ import Pagination from "./pagination";
 import Container from '../utitlity/Container';
 import Row from '../utitlity/Row';
 import CardSection from './sections/cardSection';
+import ArticleSection from './sections/articleSection';
 import {getPostsGroupedByCategory} from '../utitlity/js/functions';
 
 const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-  const postsPerCategory = getPostsGroupedByCategory(state.source)
-  console.log("POSTS_PER_CATEGORY", postsPerCategory);
+  const postsPerCategory = getPostsGroupedByCategory(state.source);
   
   return (
     <Container>
+
       {/* If the list is a taxonomy, we render a title. */}
       {data.isTaxonomy && (
         <Header>
@@ -43,9 +44,14 @@ const List = ({ state }) => {
           {data.route === '/' 
           ? postsPerCategory.map((postsCategory, index) => {
               if(postsCategory.category){
-                return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                switch (postsCategory.category.name) {
+                  case "Opinion":
+                    return <ArticleSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                  default:
+                    return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                }
               }else{
-                return <p key={index}></p>;
+                return <span key={index}></span>;
               }
           })
           :<Row>

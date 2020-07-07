@@ -6,7 +6,7 @@ import {categoryWidgets} from '../config/homepageSections'
 export const getPostsGroupedByCategory = source =>  {
 
   return categoryWidgets.map(categoryWidget=>{
-    const posts = getPostsFromCategory(source, categoryWidget.id).slice(0,3)
+    const posts = getPostsFromCategory(source, categoryWidget.id).slice(0,categoryWidget.length)
     const category = source.category[categoryWidget.id]
     return {order: categoryWidget.order, posts, category}
   });

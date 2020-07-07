@@ -40,8 +40,6 @@ const codeawisTheme = {
       },
       beforeSSR: async ({ state, actions }) => {
         if (state.router.link === "/") {
-          console.log(state.router.link)
-          console.log('getting data from beforeSSR...')
           // await actions.source.fetch(`/category/featured/`);
           await Promise.all(
               categoryWidgets.map(categoryWidget=>{

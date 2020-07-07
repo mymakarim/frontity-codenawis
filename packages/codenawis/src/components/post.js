@@ -22,7 +22,8 @@ const Post = ({ state, actions, libraries }) => {
   
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
-  console.log("Author", author);
+  
+  const url = state.frontity.url;
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -37,16 +38,16 @@ const Post = ({ state, actions, libraries }) => {
   return data.isReady ? (
     <Container>
     <Head>
-          <meta name="description" content={state.frontity.description} />
           <html lang="en" />
+          <meta name="description" content={state.frontity.description} />
           
           <meta property="og:type" content="article" />
-          <meta property="og:url" content={"https://newschin.mymakarim.vercel.app" + state.router.link} />
+          <meta property="og:url" content={url + state.router.link} />
           <meta property="og:title" content={ post.title.rendered } />
           <meta property="og:description" content={ post.excerpt.rendered } />
           <meta property="og:image" content={state.source.attachment[post.featured_media].source_url} />
 
-          <meta property="twitter:url" content={"https://newschin.mymakarim.vercel.app" + state.router.link} />
+          <meta property="twitter:url" content={url + state.router.link} />
           <meta property="twitter:title" content={ post.title.rendered } />
           <meta property="twitter:description" content={ post.excerpt.rendered } />
           <meta property="twitter:image" content={state.source.attachment[post.featured_media].source_url} ></meta>
@@ -61,7 +62,7 @@ const Post = ({ state, actions, libraries }) => {
             <FlexBetween>
                 {author && (
                   <FlexCenter>
-                    <Avatar src={author.avatar_urls[96]} width="80px" alt=""/>
+                    <Avatar src={author.avatar_urls[96]} alt=""/>
                     <div>
                       <Author authorId={post.author} /><br />
                       <PubDate post={post} />

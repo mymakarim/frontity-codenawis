@@ -13,12 +13,12 @@ import Author from '../meta/author';
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
-const ListItem = ({ state, item }) => {
+const ListItem = ({ state, item, className='' }) => {
   const author = state.source.author[item.author];
   // Get the data of the post.
 
   return (
-        <ColMd4>
+        <Col className={className}>
             <Article>
                 <HoverLink link={item.link}>
                 {state.theme.featured.showOnList && (
@@ -35,7 +35,7 @@ const ListItem = ({ state, item }) => {
                     <PubDate post={item} />
                 </Meta>
             </Article>
-        </ColMd4>
+        </Col>
   );
 };
 
@@ -44,9 +44,8 @@ export default connect(ListItem);
 
 const Article = styled.div`
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-  max-width:750px;
   margin:0 auto;
-  height:330px;
+  height:350px;
   background-color: white;
   margin-bottom: 40px;
   border-radius: 5px;
@@ -55,15 +54,25 @@ const Article = styled.div`
   }
 `;
 
-const ColMd4 = styled.div`
+const Col = styled.div`
   position: relative;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  
   @media (min-width: 768px){
-      -ms-flex: 0 0 33.333333%;
+    &.m4 {
       flex: 0 0 33.333333%;
       max-width: 30.333333%;
+    }
+    &.M6 {
+      flex: 0 0 49.5%;
+      max-width: 49.5%;
+    }
   }
 `;
 

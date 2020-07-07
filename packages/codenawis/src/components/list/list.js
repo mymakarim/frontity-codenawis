@@ -5,8 +5,7 @@ import Pagination from "./pagination";
 import Container from '../utitlity/Container';
 import Row from '../utitlity/Row';
 import Section444 from './sections/section444';
-import Section633 from './sections/section633';
-import Section66 from './sections/section66';
+import Section6332 from './sections/section6332';
 import {getPostsGroupedByCategory} from '../utitlity/js/functions';
 
 const List = ({ state }) => {
@@ -14,6 +13,64 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link);
   const postsPerCategory = getPostsGroupedByCategory(state.source);
   
+  const newsWidgets = [
+    {
+      grid: "m3",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m6",
+      name: "listItemHorizontal",
+      howmany: 2,
+      flex: "column"
+    },
+    {
+      grid: "m3",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    }
+  ];
+
+  const featuredWidgets = [
+    {
+      grid: "m6",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m6",
+      name: "listItemHorizontal",
+      howmany: 2,
+      flex: "column"
+    }
+  ];
+
+  const multimediaWidgets = [
+    {
+      grid: "m6",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m3",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m3",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    }
+  ];
+  
+
   return (
     <Container>
 
@@ -47,11 +104,11 @@ const List = ({ state }) => {
               if(postsCategory.category){
                 switch (postsCategory.category.slug) {
                   case "featured":
-                    return <Section66 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgetLeft="listItem" widgetRight="listItemHorizontal" />
+                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={featuredWidgets} />
                   case "multimedia":
-                    return <Section633 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={multimediaWidgets} />
                   case "news":
-                    return <Section444 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widget="listItemHorizontalSmall" />
+                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={newsWidgets} />
                   default:
                     return <Section444 key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
                 }

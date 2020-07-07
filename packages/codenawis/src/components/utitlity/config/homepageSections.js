@@ -3,13 +3,13 @@ export const categoryWidgets = [
     id: 41,
     slug: "featured",
     order: 1,
-    length: 4
+    length: 3
   },
   {
     id: 13,
     slug: "news",
     order: 2,
-    length: 6
+    length: 4
   },
   {
     id: 8,

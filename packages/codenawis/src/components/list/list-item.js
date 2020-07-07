@@ -13,27 +13,32 @@ import Author from '../meta/author';
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
-const ListItem = ({ state, item, className='' }) => {
+  const ListItem = ({ state, item, className='' }) => {
   const author = state.source.author[item.author];
   // Get the data of the post.
 
   return (
         <Col className={className}>
             <Article>
-                <HoverLink link={item.link}>
-                {state.theme.featured.showOnList && (
-                  <FeaturedMedia id={item.featured_media} />
-                )}
+                <div>
+                  <HoverLink link={item.link}>
+                  {state.theme.featured.showOnList && (
+                    <FeaturedMedia id={item.featured_media} />
+                  )}
                     <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-                </HoverLink>
+                  </HoverLink>
+                </div>
 
-                <Meta>
-                    {/* If the post has an author, we render a clickable author text. */}
-                    {author && (
-                      <Author authorId={item.author} />
-                    )}
-                    <PubDate post={item} />
-                </Meta>
+                <div>
+                  <Meta>
+                      {/* If the post has an author, we render a clickable author text. */}
+                      {author && (
+                        <Author authorId={item.author} />
+                      )}
+                      &nbsp;&nbsp;
+                      <PubDate post={item} />
+                  </Meta>
+                </div>
             </Article>
         </Col>
   );
@@ -45,18 +50,21 @@ export default connect(ListItem);
 const Article = styled.div`
   box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
   margin:0 auto;
-  height:350px;
+  height:340px;
   background-color: white;
   margin-bottom: 40px;
   border-radius: 5px;
   font-family: "Poppins", Roboto,
     "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
+  dispaly: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
   }
 `;
 
 const Col = styled.div`
   position: relative;
-  width: 100%;
   padding-right: 15px;
   padding-left: 15px;
   
@@ -65,22 +73,27 @@ const Col = styled.div`
   max-width: 100%;
   
   @media (min-width: 768px){
+    &.m3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
     &.m4 {
       flex: 0 0 33.333333%;
-      max-width: 30.333333%;
+      max-width: 33.333333%;
     }
-    &.M6 {
-      flex: 0 0 49.5%;
-      max-width: 49.5%;
+    &.m6 {
+      flex: 0 0 50%;
+      max-width: 50%;
     }
   }
 `;
 
 const Title = styled.h2`
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 1rem 1.5rem;
 `;
 const Meta = styled.div`
   margin:0 1.5rem;
+  padding-bottom: 1.5rem;
 `;

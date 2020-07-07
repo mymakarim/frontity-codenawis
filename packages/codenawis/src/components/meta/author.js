@@ -6,11 +6,11 @@ const Author = ({ state, authorId }) => {
   const author = state.source.author[authorId];
 
   return (
-    <span>
+    <small>
       <HoverLink link={author.link}>
         <b>{author.name}</b>
       </HoverLink>
-    </span>
+    </small>
   );
 };
 

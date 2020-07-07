@@ -9,7 +9,6 @@ const Container = ({children}) => {
 }
 
 const ContainerWrapper = styled.div`
-  box-sizing: border-box;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;

@@ -44,9 +44,9 @@ const List = ({ state }) => {
           {data.route === '/' 
           ? postsPerCategory.map((postsCategory, index) => {
               if(postsCategory.category){
-                switch (postsCategory.category.name) {
-                  case "Opinion":
-                    return <ArticleSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
+                switch (postsCategory.category.slug) {
+                  case "multimedia":
+                    return <ArticleSection key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
                   default:
                     return <CardSection key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
                 }
@@ -58,7 +58,7 @@ const List = ({ state }) => {
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];
               // Render one Item component for each one.
-              return <ListItem key={item.id} item={item} />
+              return <ListItem className="m4" key={item.id} item={item} />
             })} 
           </Row>
           }

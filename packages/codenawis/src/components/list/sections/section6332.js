@@ -23,15 +23,15 @@ const Section6332 = ({state, postsCategory, category, widgets}) => {
       widgetContentCategorized.push([]);
     });
 
-    console.log("widgetObj", widgets);
+    // console.log("widgetObj", widgets);
 
     postsCategory.posts.map((post, index) => {
       const item = state.source['post'][post.id];
       return widgetContent.push(<GetWidget key={post.id} widget={widgetNames[index]} item={item} />)
     });
 
-    console.log("WidgetContent", widgetContent);
-    console.log("WidgetContentCategorized", widgetContentCategorized);
+    // console.log("WidgetContent", widgetContent);
+    // console.log("WidgetContentCategorized", widgetContentCategorized);
 
     let myIndex = 0;
     widgets.map((widget, index)=>{
@@ -43,7 +43,7 @@ const Section6332 = ({state, postsCategory, category, widgets}) => {
       }
     });
 
-    console.log("WidgetContentCategorized", widgetContentCategorized);
+    // console.log("WidgetContentCategorized", widgetContentCategorized);
 
 
 
@@ -67,7 +67,7 @@ widgets.map((widget, index)=>{
     }
 });
 
-console.log("WidgetFinal", widgetFinal);
+// console.log("WidgetFinal", widgetFinal);
 
     return (
         <>

@@ -14,7 +14,7 @@ const Section444 = ({state, postsCategory, category, widget="listItem"}) => {
             {postsCategory.posts.map((post) => {
               const item = state.source['post'][post.id];
               return (
-                <Col className="m4">
+                <Col className="m3">
                   <GetWidget key={post.id} widget={widget} item={item} />
                 </Col>
               )

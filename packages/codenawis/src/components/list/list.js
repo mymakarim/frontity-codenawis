@@ -4,6 +4,7 @@ import ListItem from "./list-item";
 import Pagination from "./pagination";
 import Container from '../utitlity/Container';
 import Row from '../utitlity/Row';
+import Col from '../utitlity/Col';
 import Section444 from './sections/section444';
 import Section6332 from './sections/section6332';
 import {getPostsGroupedByCategory} from '../utitlity/js/functions';
@@ -13,41 +14,47 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link);
   const postsPerCategory = getPostsGroupedByCategory(state.source);
   
-  const newsWidgets = [
-    {
-      grid: "m3",
-      name: "listItem",
-      howmany: 1,
-      flex: "none"
-    },
+  const opinionWidgets = [
     {
       grid: "m6",
-      name: "listItemHorizontal",
+      name: "listItem",
       howmany: 2,
       flex: "column"
     },
     {
       grid: "m3",
       name: "listItem",
-      howmany: 1,
-      flex: "none"
+      howmany: 2,
+      flex: "column"
+    },
+    {
+      grid: "m3",
+      name: "listItem",
+      howmany: 2,
+      flex: "column"
     }
   ];
 
   const featuredWidgets = [
     {
-      grid: "m6",
+      grid: "m4",
       name: "listItem",
       howmany: 1,
       flex: "none"
     },
     {
-      grid: "m6",
-      name: "listItemHorizontal",
-      howmany: 2,
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 3,
       flex: "column"
+    },
+    {
+      grid: "m4",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
     }
-  ];
+  ]
 
   const multimediaWidgets = [
     {
@@ -69,7 +76,60 @@ const List = ({ state }) => {
       flex: "none"
     }
   ];
+
+  const newsWidgets = [
+    {
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m4",
+      name: "listItemHorizontalSmall",
+      howmany: 1,
+      flex: "none"
+    },
+  ];
   
+  const interviews = [
+    {
+      grid: "m6",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m6",
+      name: "listItem",
+      howmany: 1,
+      flex: "none"
+    }
+  ];
 
   return (
     <Container>
@@ -109,6 +169,10 @@ const List = ({ state }) => {
                     return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={multimediaWidgets} />
                   case "news":
                     return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={newsWidgets} />
+                  case "exclusive-interviews":
+                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={interviews} />
+                  case "opinion":
+                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={opinionWidgets} />
                   default:
                     return <Section444 key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
                 }
@@ -120,7 +184,11 @@ const List = ({ state }) => {
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];
               // Render one Item component for each one.
-              return <ListItem className="m4" key={item.id} item={item} />
+              return (
+                <Col className="m3">
+                  <ListItem key={item.id} item={item} />
+                </Col>
+              );
             })} 
           </Row>
           }

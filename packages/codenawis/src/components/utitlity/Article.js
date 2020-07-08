@@ -2,7 +2,7 @@ import { styled, css } from "frontity";
 
 const Article = ({children, className, height}) => {
     if(height === "NaNpx"){
-      height= "100%";
+      height= "360px";
     }
     return (
         <ArticleCss css={css`height: ${height}`} className={className}>

@@ -61,6 +61,7 @@ const globalStyles = css`
   margin: 0;
   font-family: "Poppins", Roboto,
     "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #fefefe;
   }
   a,
   a:visited {

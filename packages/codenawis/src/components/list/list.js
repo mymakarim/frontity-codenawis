@@ -125,9 +125,9 @@ const List = ({ state }) => {
     },
     {
       grid: "m6",
-      name: "listItem",
-      howmany: 1,
-      flex: "none"
+      name: "listItemHorizontal",
+      howmany: 2,
+      flex: "column"
     }
   ];
 

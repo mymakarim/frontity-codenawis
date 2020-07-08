@@ -26,7 +26,7 @@ import Author from '../meta/author';
                   <div>
                   <HoverLink link={item.link}>
                     {state.theme.featured.showOnList && (
-                      <FeaturedMedia height="135px" width="200px" id={item.featured_media} />
+                      <FeaturedMedia height="135px" width="135px" id={item.featured_media} />
                     )}
                   </HoverLink>
                   </div>

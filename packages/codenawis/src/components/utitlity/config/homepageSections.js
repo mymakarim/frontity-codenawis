@@ -9,7 +9,7 @@ export const categoryWidgets = [
     id: 276,
     slug: "exclusive-interviews",
     order: 2,
-    length: 2
+    length: 3
   },
   {
     id: 69,

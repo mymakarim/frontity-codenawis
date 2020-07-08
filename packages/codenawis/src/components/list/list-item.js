@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, styled } from "frontity";
+import { connect } from "frontity";
 import HoverLink from "../utitlity/HoverLink";
 import Article from "../utitlity/Article";
 import CardTitle from "../utitlity/cardTitle";

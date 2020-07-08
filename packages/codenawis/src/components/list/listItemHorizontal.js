@@ -16,17 +16,19 @@ import Author from '../meta/author';
  * - Author: name of author and published date
  * - FeaturedMedia: the featured image/video of the post
  */
-  const ListItemHorizontal = ({ state, item }) => {
+  const ListItemHorizontal = ({ state, item, imageHeight }) => {
   const author = state.source.author[item.author];
   // Get the data of the post.
-
+  if(!imageHeight || imageHeight === "NaNpx"){
+    imageHeight= "160px";
+  }
   return (
-            <Article className="mb-2" height="135px">
+            <Article className="mb-2" height={imageHeight}>
                 <Flex>
                   <div>
                   <HoverLink link={item.link}>
                     {state.theme.featured.showOnList && (
-                      <FeaturedMedia height="135px" width="135px" id={item.featured_media} />
+                      <FeaturedMedia height={imageHeight} width={imageHeight} id={item.featured_media} />
                     )}
                   </HoverLink>
                   </div>

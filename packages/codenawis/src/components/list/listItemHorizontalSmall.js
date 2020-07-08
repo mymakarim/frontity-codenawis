@@ -5,15 +5,17 @@ import Article from "../utitlity/Article";
 import CardTitle from "../utitlity/cardTitle";
 import FeaturedMedia from "../featured-media";
 
-const ListItemHorizontalSmall = ({ state, item }) => {
-
+const ListItemHorizontalSmall = ({ state, item, imageHeight }) => {
+  if(!imageHeight || imageHeight === "NaNpx"){
+    imageHeight= "100px";
+  }
   return (
-            <Article className="mb-2">
+            <Article className="mb-2" height={imageHeight}>
                 <Flex>
                   <div>
                   <HoverLink link={item.link}>
                     {state.theme.featured.showOnList && (
-                      <FeaturedMedia height="100px" width="100px" id={item.featured_media} />
+                      <FeaturedMedia height={imageHeight} width={imageHeight} id={item.featured_media} />
                     )}
                   </HoverLink>
                   </div>

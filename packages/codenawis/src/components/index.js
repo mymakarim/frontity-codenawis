@@ -71,6 +71,31 @@ const globalStyles = css`
   a:hover {
     text-decoration: none;
   }
+  
+  .p-relative {
+    position: relative;
+  }
+  .overlay {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(0,0,0,.6));
+    a {
+      color: white;
+    }
+    h2 {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    small {
+      color: #efefef;
+    }
+  }
 `;
 
 const HeadContainer = styled.div`

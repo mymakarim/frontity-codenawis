@@ -1,7 +1,7 @@
 import { styled, css } from "frontity";
 
 const Article = ({children, className, height}) => {
-    if(height === "NaNpx"){
+    if(!height || height === "NaNpx"){
       height= "360px";
     }
     return (

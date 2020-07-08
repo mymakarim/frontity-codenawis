@@ -8,6 +8,7 @@ import GetWidget from '../../utitlity/getWidget';
 
 const Section6332 = ({state, postsCategory, category, widgets}) => {
     let widgetNames = [];
+    let widgetHeights = [];
 
     let widgetContent = [];
     let widgetContentCategorized = [];
@@ -18,6 +19,7 @@ const Section6332 = ({state, postsCategory, category, widgets}) => {
       let i = 0;
       while (i < widget.howmany) {
         widgetNames.push(widget.name);
+        widgetHeights.push(widget.imageHeight);
         i++;
       }
       widgetContentCategorized.push([]);
@@ -27,7 +29,7 @@ const Section6332 = ({state, postsCategory, category, widgets}) => {
 
     postsCategory.posts.map((post, index) => {
       const item = state.source['post'][post.id];
-      return widgetContent.push(<GetWidget key={post.id} widget={widgetNames[index]} item={item} />)
+      return widgetContent.push(<GetWidget key={post.id} imageHeight={widgetHeights[index]} widget={widgetNames[index]} item={item} />)
     });
 
     // console.log("WidgetContent", widgetContent);

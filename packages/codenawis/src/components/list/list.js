@@ -17,7 +17,7 @@ const List = ({ state }) => {
   const opinionWidgets = [
     {
       grid: "m6",
-      name: "listItem",
+      name: "listItemOverlay",
       howmany: 2,
       flex: "column"
     },
@@ -37,26 +37,36 @@ const List = ({ state }) => {
 
   const featuredWidgets = [
     {
-      grid: "m4",
-      name: "listItem",
+      grid: "m3",
+      name: "listItemOverlay",
       howmany: 1,
-      flex: "none"
+      flex: "none",
+      imageHeight: "460px"
     },
     {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 3,
-      flex: "column"
+      grid: "m3",
+      name: "listItemOverlay",
+      howmany: 1,
+      flex: "none",
+      imageHeight: "460px"
     },
     {
-      grid: "m4",
-      name: "listItem",
+      grid: "m3",
+      name: "listItemOverlay",
       howmany: 1,
-      flex: "none"
+      flex: "none",
+      imageHeight: "460px"
+    },
+    {
+      grid: "m3",
+      name: "listItemOverlay",
+      howmany: 1,
+      flex: "none",
+      imageHeight: "460px"
     }
   ]
 
-  const multimediaWidgets = [
+  const interviews = [
     {
       grid: "m6",
       name: "listItem",
@@ -64,13 +74,7 @@ const List = ({ state }) => {
       flex: "none"
     },
     {
-      grid: "m3",
-      name: "listItem",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m3",
+      grid: "m6",
       name: "listItem",
       howmany: 1,
       flex: "none"
@@ -115,19 +119,38 @@ const List = ({ state }) => {
       flex: "none"
     },
   ];
+
+  const bookReviewWidgets = [
+    {
+      grid: "m12",
+      name: "listItemOverlay",
+      howmany: 1,
+      flex: "none",
+      imageHeight: "300px"
+    }
+  ]
   
-  const interviews = [
+  const multimediaWidgets = [
     {
       grid: "m6",
-      name: "listItem",
+      name: "listItemOverlay",
       howmany: 1,
-      flex: "none"
+      flex: "none",
+      imageHeight: "440px"
     },
     {
-      grid: "m6",
-      name: "listItemHorizontal",
+      grid: "m3",
+      name: "listItemOverlay",
       howmany: 2,
-      flex: "column"
+      flex: "column",
+      imageHeight: "210px"
+    },
+    {
+      grid: "m3",
+      name: "listItemOverlay",
+      howmany: 1,
+      flex: "none",
+      imageHeight: "440px"
     }
   ];
 
@@ -173,6 +196,8 @@ const List = ({ state }) => {
                     return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={interviews} />
                   case "opinion":
                     return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={opinionWidgets} />
+                  case "book-review":
+                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={bookReviewWidgets} />
                   default:
                     return <Section444 key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
                 }

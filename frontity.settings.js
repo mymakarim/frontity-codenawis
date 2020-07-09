@@ -1,10 +1,10 @@
 const settings = {
-  "name": "newschin",
+  "name": "CodeNawis - Fashion Jackson",
   "state": {
     "frontity": {
       "url": "https://newschin.mymakarim.vercel.app",
-      "title": "NewsChin",
-      "description": "A NextJs clone of NewsChin.com"
+      "title": "CodeNawis",
+      "description": "A NextJs clone of FashionJackson.com"
     }
   },
   "packages": [
@@ -18,20 +18,24 @@ const settings = {
               "/"
             ],
             [
-              "News",
-              "/category/news/"
+              "Casual",
+              "/category/outfits/casual/"
             ],
             [
-              "Featured",
-              "/category/featured/"
+              "Collage",
+              "/category/collage/"
             ],
             [
-              "Report",
-              "/category/report/"
+              "Fashion",
+              "/category/fashion/"
             ],
             [
-              "MultiMedia",
-              "/category/multimedia/"
+              "Beauty",
+              "/category/beauty/"
+            ],
+            [
+              "Black Blazer",
+              "/category/black-blazer/"
             ]
           ],
           "featured": {
@@ -45,7 +49,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://kabulnow.af/wp-json"
+          "api": "https://fashionjackson.com/wp-json"
         }
       }
     },

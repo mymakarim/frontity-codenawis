@@ -1,11 +1,10 @@
 import React from "react";
 import { connect, styled, decode } from "frontity";
-import ListItem from "./list-item";
+import ListItemOverlay from "./listItemOverlay";
 import Pagination from "./pagination";
 import Container from '../utitlity/Container';
 import Row from '../utitlity/Row';
 import Col from '../utitlity/Col';
-import Section444 from './sections/section444';
 import Section6332 from './sections/section6332';
 import {getPostsGroupedByCategory} from '../utitlity/js/functions';
 import {sections} from '../utitlity/config/homepageSections'
@@ -39,24 +38,7 @@ const List = ({ state }) => {
   }
 
   const getWidget = (postsCategory, widget)=>{
-    switch (postsCategory[0].category.slug) {
-      case "featured":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      case "multimedia":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      case "news":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      case "exclusive-interviews":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      case "opinion":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      case "book-review":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      case "letters":
-        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
-      default:
-        return <Section444 key={postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} />
-    }
+    return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
   }
 
   { data.route === '/' ?
@@ -102,7 +84,7 @@ const List = ({ state }) => {
               // Render one Item component for each one.
               return (
                 <Col className="m3">
-                  <ListItem key={item.id} item={item} />
+                  <ListItemOverlay imageHeight="500px" key={item.id} item={item} />
                 </Col>
               );
             })} 

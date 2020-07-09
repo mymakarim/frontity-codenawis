@@ -1,40 +1,35 @@
 export const categoryWidgets = [
   {
-    id: 8,
-    slug: "multimedia",
+    id: 2189,
+    slug: "black-blazer",
     length: 4
   },
   {
-    id: 13,
-    slug: "news",
+    id: 931,
+    slug: "beauty",
+    length: 4
+  },
+  {
+    id: 3,
+    slug: "fashion",
     length: 6
   },
   {
-    id: 7,
-    slug: "opinion",
+    id: 168,
+    slug: "collage",
+    length: 4
+  },
+  {
+    id: 2370,
+    slug: "outfits/casual",
     length: 6
-  },
-  {
-    id: 41,
-    slug: "featured",
-    length: 9
-  },
-  {
-    id: 276,
-    slug: "exclusive-interviews",
-    length: 3
-  },
-  {
-    id: 319,
-    slug: "opinion/letters",
-    length: 10
   }
 ];
 
 
 
 export const sections = [
-  { 
+  {
     grid: "m12",
     widget: [
       {
@@ -42,161 +37,168 @@ export const sections = [
         name: "listItemOverlay",
         howmany: 1,
         flex: "none",
-        imageHeight: "420px",
+        imageHeight: "450px",
+      },
+      {
+        grid: "m3",
+        name: "listItemOverlay",
+        howmany: 1,
+        flex: "none",
+        imageHeight: "450px"
+      },
+      {
+        grid: "m3",
+        name: "listItemOverlay",
+        howmany: 1,
+        flex: "none",
+        imageHeight: "450px"
+      }
+    ],
+    slug: "casual"
+  },
+  {
+    grid: "m4",
+    widget: [
+      {
+        grid: "m12",
+        name: "listItem",
+        howmany: 1,
+        flex: "none",
+        imageHeight: "250px"
+      },
+      {
+        grid: "m12",
+        name: "listItemNoImage",
+        howmany: 3,
+        flex: "column"
+      }
+    ],
+    slug: "collage"
+  },
+  {
+    grid: "m4",
+    widget: [
+      {
+        grid: "m12",
+        name: "listItem",
+        howmany: 1,
+        flex: "none",
+        imageHeight: "250px"
+      },
+      {
+        grid: "m12",
+        name: "listItemNoImage",
+        howmany: 3,
+        flex: "column"
+      }
+    ],
+    slug: "beauty"
+  },
+  {
+    grid: "m4",
+    widget: [
+      {
+        grid: "m12",
+        name: "listItem",
+        howmany: 1,
+        flex: "none",
+        imageHeight: "250px"
+      },
+      {
+        grid: "m12",
+        name: "listItemNoImage",
+        howmany: 3,
+        flex: "column"
+      }
+    ],
+    slug: "black-blazer"
+  },
+  {
+    grid: "m12",
+    widget: [
+      {
+        grid: "m12",
+        name: "listItemOverlay",
+        howmany: 2,
+        flex: "row"
+      },
+      {
+        grid: "m6",
+        name: "listItemHorizontal",
+        howmany: 2,
+        flex: "column"
+      },
+      {
+        grid: "m6",
+        name: "listItemHorizontal",
+        howmany: 2,
+        flex: "column"
+      }
+    ],
+    "slug": "casual"
+  },
+  {
+    grid: "m12",
+    widget: [
+      {
+        grid: "m12",
+        name: "listItemOverlay",
+        howmany: 3,
+        flex: "row",
+        imageHeight: "500px"
+      }
+    ],
+    "slug": "black-blazer",
+  },
+  {
+    grid: "m12",
+    widget: [
+      {
+        grid: "m6",
+        name: "listItemOverlay",
+        howmany: 1,
+        flex: "none",
+        imageHeight: "500px"
       },
       {
         grid: "m3",
         name: "listItemOverlay",
         howmany: 2,
         flex: "column",
-        imageHeight: "200px"
+        imageHeight: "240px"
       },
       {
         grid: "m3",
         name: "listItemOverlay",
-        howmany: 1,
-        flex: "none",
-        imageHeight: "420px"
+        howmany: 2,
+        flex: "column",
+        imageHeight: "240px"
       }
     ],
-    slug: "multimedia"
-  },
-  {
-    grid: "m12",
-    widget: [
-      {
-        grid: "m12",
-        name: "listItemHorizontalSmall",
-        howmany: 3,
-        flex: "row"
-      },
-      {
-        grid: "m12",
-        name: "listItemHorizontalSmall",
-        howmany: 3,
-        flex: "row"
-      }
-    ],
-    slug: "opinion"
-  },
-  {
-    grid: "m6",
-    widget: [
-      {
-        grid: "m6",
-        name: "listItemOverlay",
-        howmany: 1,
-        flex: "none",
-        imageHeight: "300px"
-      },
-      {
-        grid: "m6",
-        name: "listItemNoImage",
-        howmany: 4,
-        flex: "column"
-      }
-    ],
-    slug: "news"
-  },
-  {
-    grid: "m6",
-    widget: [
-      {
-        grid: "m6",
-        name: "listItemOverlay",
-        howmany: 1,
-        flex: "none",
-        imageHeight: "300px"
-      },
-      {
-        grid: "m6",
-        name: "listItemNoImage",
-        howmany: 4,
-        flex: "column"
-      }
-    ],
-    slug: "multimedia"
-  },
-  {
-    grid: "m4",
-    widget: [
-  {
-    grid: "m12",
-    name: "listItemOverlay",
-    howmany: 1,
-    flex: "none",
-    imageHeight: "250px"
-  },
-  {
-    grid: "m12",
-    name: "listItemNoImage",
-    howmany: 3,
-    flex: "column"
-  }
-],
-    slug: "featured"
-  },
-  {
-    grid: "m4",
-    widget: [
-      {
-        grid: "m12",
-        name: "listItemOverlay",
-        howmany: 1,
-        flex: "none",
-        imageHeight: "250px"
-      },
-      {
-        grid: "m12",
-        name: "listItemNoImage",
-        howmany: 3,
-        flex: "column"
-      }
-    ],
-    slug: "news"
-  },
-  {
-    grid: "m4",
-    widget: [
-      {
-        grid: "m12",
-        name: "listItemOverlay",
-        howmany: 1,
-        flex: "none",
-        imageHeight: "250px"
-      },
-      {
-        grid: "m12",
-        name: "listItemNoImage",
-        howmany: 3,
-        flex: "column"
-      }
-    ],
-    slug: "opinion"
+    "slug": "fashion",
   },
   {
     grid: "m8",
     widget: [
-    {
-      grid: "m12",
-      name: "listItemHorizontal",
-      howmany: 8,
-      flex: "column"
-    }
-  ],
-    slug: "news"
+      {
+        grid: "m12",
+        name: "listItemHorizontal",
+        howmany: 6,
+        flex: "column"
+      }
+    ],
+    "slug": "casual",
   },
   {
     grid: "m4",
     widget: [
       {
         grid: "m12",
-        name: "listItemOverlay",
-        howmany: 4,
-        flex: "column",
-        imageHeight: "250px"
+        name: "listItem",
+        howmany: 3,
+        flex: "column"
       }
     ],
-    "slug": "multimedia"
+    "slug": "casual",
   }
 ];

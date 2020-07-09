@@ -26,7 +26,7 @@ const ContainerWrapper = styled.div`
     max-width: 960px;
   }
   @media (min-width: 1200px){
-     max-width: 1200px;
+     max-width: 1400px;
   }
   img {
     width: 100%;

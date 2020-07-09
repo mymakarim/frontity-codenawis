@@ -21,7 +21,7 @@ import Author from '../meta/author';
   // Get the data of the post.
 
   return (
-            <Article height={(parseInt(imageHeight) + 160) + "px"} className="mb-2">
+            <Article height={(parseInt(imageHeight) + 120) + "px"} className="mb-2">
                 <div>
                   <HoverLink link={item.link}>
                   {state.theme.featured.showOnList && (

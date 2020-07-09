@@ -11,7 +11,7 @@ const Tags = ({ state, tags }) => (
           const tag = state.source.tag[tagId];
           return (
             <Wrapper key={tagId}>
-              <Link link={tag.link}>{tag.name}</Link>
+              <Link link={tag?.link}>{tag?.name}</Link>
             </Wrapper>
           );
         })}

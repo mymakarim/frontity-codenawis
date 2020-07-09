@@ -10,13 +10,13 @@ const authorBox = ({author}) => {
         <>
             <AuthorBoxCss>
                 <FlexCenter>
-                  <Link link={author.link}>
-                    <Avatar src={author.avatar_urls[96]} alt=""/>
+                  <Link link={author?.link}>
+                    <Avatar src={author?.avatar_urls[96]} alt=""/>
                   </Link>
                   <div>
-                    <Author authorId={author.id} />
-                    <p>{author.description}</p>
-                    <a href={author.url} target="_blank" >{author.url}</a>
+                    <Author authorId={author?.id} />
+                    <p>{author?.description}</p>
+                    <a href={author?.url} target="_blank" >{author?.url}</a>
                   </div>
                 </FlexCenter>
             </AuthorBoxCss>   

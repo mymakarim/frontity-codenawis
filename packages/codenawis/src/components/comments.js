@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect, styled } from "frontity";
+import Avatar from "./utitlity/avatar";
+import FlexCenter from "./utitlity/FlexCenter";
 
 const Comments = ({ libraries, state }) => {
     
@@ -34,16 +36,17 @@ const Comments = ({ libraries, state }) => {
                     {comments.length > 0 && (
                         <>
                             {comments.map(item => {
+                                console.log("Comment", item);
                                 const date = new Date(item.date);
                                 return (
                                     <SingleComment key={item.id}>
-                                        <Author>
-                                            By <b>{item.author_name}</b>
-                                        </Author>
-                                        <Fecha>
-                                            {" "}
-                                            on <b>{date.toDateString()}</b>
-                                        </Fecha>
+                                        <FlexCenter>
+                                            <Avatar src={item.author_avatar_urls[96]} alt=""/>
+                                            <div>
+                                                <AuthorName>{item.author_name}</AuthorName>
+                                                <small>{date.toDateString()}</small>
+                                            </div>
+                                        </FlexCenter>
 
                                         <SingleCommentContent dangerouslySetInnerHTML={{
                                             __html: item.content.rendered
@@ -80,14 +83,8 @@ const SingleComment = styled.div`
   padding: 10px;
 `;
 
-const Author = styled.p`
-  font-size: 0.8em;
-  display: inline;
-`;
-
-const Fecha = styled.p`
-  font-size: 0.8em;
-  display: inline;
+const AuthorName = styled.b`
+    display: block;
 `;
 
 const SingleCommentContent = styled.div`

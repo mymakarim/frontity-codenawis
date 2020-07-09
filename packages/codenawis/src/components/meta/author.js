@@ -7,8 +7,8 @@ const Author = ({ state, authorId }) => {
 
   return (
     <small>
-      <HoverLink link={author.link}>
-        <b>{author.name}</b>
+      <HoverLink link={author?.link}>
+        <b>{author?.name}</b>
       </HoverLink>
     </small>
   );

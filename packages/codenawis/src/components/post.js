@@ -101,7 +101,9 @@ const Post = ({ state, actions, libraries }) => {
       
       <br/>
       <br/>
-      <Comments />
+      <Content>
+        <Comments />
+      </Content>
       <br/>
       <br/>
       <br/>

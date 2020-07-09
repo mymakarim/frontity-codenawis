@@ -40,5 +40,8 @@ const ArticleCss = styled.div`
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     border-color: transparent;
   }
+  @media (max-width: 576px){
+    height: auto !important;
+  }
 `;
 export default Article

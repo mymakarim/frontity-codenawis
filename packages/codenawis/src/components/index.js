@@ -71,10 +71,10 @@ const globalStyles = css`
   a:hover {
     text-decoration: none;
   }
-  
-  .box-shadow {
+  .section {
     box-shadow: 0px 0px 20px #00000008;
     background-color: white;
+    /* height: 100%; */
   }
   .p-relative {
     position: relative;

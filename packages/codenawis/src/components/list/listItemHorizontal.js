@@ -24,7 +24,7 @@ import Author from '../meta/author';
   }
 
   function truncate(str, n){
-    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+    return (str.length > n) ? str.substr(3, n-1) + '...' : str;
   };
 
   return (
@@ -42,7 +42,8 @@ import Author from '../meta/author';
                           <HoverLink link={item.link}>
                             <CardTitle title={item.title.rendered} />
                           </HoverLink>
-                          <small dangerouslySetInnerHTML={{ __html: truncate(item.excerpt.rendered, 100) }}></small>
+                          <small>{ truncate(item.excerpt.rendered, 100) }</small>
+                          <br/>
                           {author && (
                             <Author authorId={item.author} />
                           )}
@@ -61,4 +62,7 @@ export default connect(ListItemHorizontal);
 const Flex = styled.div`
   display: flex;
   flex-grow: 1;
+  @media (max-width: 576px){
+    display: block !important;
+  }
 `;

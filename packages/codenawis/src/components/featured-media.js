@@ -21,13 +21,13 @@ const FeaturedMedia = ({ state, id, height="190px", width="100%" }) => {
       ) || null;
 
   return (
-    <div css={css`height: ${height}; width: ${width}; background-color: #efefef;`}>
+    <FeaturedImage css={css`height: ${height}; width: ${width}; background-color: #efefef;`}>
       <StyledImage
         alt={media.title.rendered}
         src={media.source_url}
         srcSet={srcset}
       />
-    </div>
+    </FeaturedImage>
   );
 };
 
@@ -38,4 +38,10 @@ const StyledImage = styled(Image)`
   height: 100%;
   width: 100%;
   object-fit: cover;
+`;
+
+const FeaturedImage = styled.div`
+  @media (max-width: 576px){
+    width: auto !important;
+  }
 `;

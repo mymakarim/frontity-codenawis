@@ -27,12 +27,12 @@ import Author from '../meta/author';
                   {state.theme.featured.showOnList && (
                     <FeaturedMedia height={imageHeight} id={item.featured_media} />
                   )}
-                    <CardContent>
-                      <CardTitle title={item.title.rendered} />
-                    </CardContent>
                   </HoverLink>
                 </div>
                 <CardContent>
+                  <HoverLink link={item.link}>
+                    <CardTitle title={item.title.rendered} />
+                  </HoverLink>
                     {/* If the post has an author, we render a clickable author text. */}
                     {author && (
                       <Author authorId={item.author} />

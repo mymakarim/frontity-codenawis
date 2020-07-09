@@ -3,10 +3,7 @@ import { connect, styled } from "frontity";
 import HoverLink from "../utitlity/HoverLink";
 import CardTitle from "../utitlity/cardTitle";
 
-const ListItemNoImage = ({ state, item, imageHeight }) => {
-  if(!imageHeight || imageHeight === "NaNpx"){
-    imageHeight= "100px";
-  }
+const ListItemNoImage = ({ state, item}) => {
   return (
             <Flex className="mb-2 border-0">
                 <span>
@@ -22,11 +19,16 @@ const ListItemNoImage = ({ state, item, imageHeight }) => {
 };
 
 const Flex = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 15px;
     span {
+        float: left;
         margin-right: 10px;
+        height: 50px;
+    }
+    h2 {
+        margin-top: 0;
     }
 `;
 // Connect the Item to gain access to `state` as a prop

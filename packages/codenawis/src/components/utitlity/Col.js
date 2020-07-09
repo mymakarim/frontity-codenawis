@@ -12,13 +12,13 @@ const ColCss = styled.div`
   position: relative;
   padding-right: 15px;
   padding-left: 15px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  
+
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
-  
+  > .section {
+    margin: 15px 0;
+  }
   @media (min-width: 768px){
     &.m1 {
       flex: 0 0 8.333333%;

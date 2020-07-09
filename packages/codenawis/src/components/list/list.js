@@ -8,6 +8,7 @@ import Col from '../utitlity/Col';
 import Section444 from './sections/section444';
 import Section6332 from './sections/section6332';
 import {getPostsGroupedByCategory} from '../utitlity/js/functions';
+import {sections} from '../utitlity/config/homepageSections'
 
 const List = ({ state }) => {
   // Get the data of the current list.
@@ -15,145 +16,6 @@ const List = ({ state }) => {
   const postsPerCategory = getPostsGroupedByCategory(state.source);
 
   const homepageWidgets = [];
-  
-  const opinionWidgets = [
-    {
-      grid: "m6",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m6",
-      name: "listItem",
-      howmany: 2,
-      flex: "row"
-    },
-    {
-      grid: "m6",
-      name: "listItemHorizontal",
-      howmany: 2,
-      flex: "column"
-    },
-    {
-      grid: "m6",
-      name: "listItem",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "180px",
-    }
-  ];
-
-  const featuredWidgets = [
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "460px"
-    },
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "460px"
-    },
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "460px"
-    },
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "460px"
-    }
-  ]
-
-  const interviews = [
-    {
-      grid: "m12",
-      name: "listItem",
-      howmany: 3,
-      flex: "row"
-    }
-  ];
-
-  const newsWidgets = [
-    {
-      grid: "m12",
-      name: "listItemHorizontal",
-      howmany: 8,
-      flex: "column"
-    }
-  ];
-
-  const bookReviewWidgets = [
-    {
-      grid: "m12",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "300px"
-    }
-  ];
-
-  const lettersWidgets = [
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "310px",
-    },
-    {
-      grid: "m3",
-      name: "listItemNoImage",
-      howmany: 4,
-      flex: "column"
-    },
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "310px",
-    },
-    {
-      grid: "m3",
-      name: "listItemNoImage",
-      howmany: 4,
-      flex: "column"
-    }
-  ];
-  
-  const multimediaWidgets = [
-    {
-      grid: "m12",
-      name: "listItemOverlay",
-      howmany: 4,
-      flex: "column",
-      imageHeight: "250px"
-    }
-  ];
-
-  const sections = [
-    {
-      grid: "m8",
-      widget: newsWidgets,
-      slug: "news"
-    },
-    {
-      grid: "m4",
-      widget: multimediaWidgets,
-      "slug": "multimedia"
-    }
-  ];
 
   const populateHomepageWidgets = async ()=>{
     sections.map((section, index)=>{
@@ -163,7 +25,7 @@ const List = ({ state }) => {
       });
       homepageWidgets.push(
         <Col className={section.grid}>
-          <div className="box-shadow">
+          <div className="section">
             <Col className="m12">
               {
                 getWidget(thePostsCategory, section.widget)

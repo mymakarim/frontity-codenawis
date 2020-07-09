@@ -1,4 +1,4 @@
-# CodeNawis Frontity Theme Project :art:
+# CodeNawis Frontity Theme :art:
 
 :fire: A Frontity Theme for Wordpress site.
 

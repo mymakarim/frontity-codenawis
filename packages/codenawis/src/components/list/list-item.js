@@ -27,7 +27,9 @@ import Author from '../meta/author';
                   {state.theme.featured.showOnList && (
                     <FeaturedMedia height={imageHeight} id={item.featured_media} />
                   )}
-                    <CardTitle title={item.title.rendered} />
+                    <CardContent>
+                      <CardTitle title={item.title.rendered} />
+                    </CardContent>
                   </HoverLink>
                 </div>
                 <CardContent>

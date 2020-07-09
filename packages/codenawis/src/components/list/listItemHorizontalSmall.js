@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import HoverLink from "../utitlity/HoverLink";
 import Article from "../utitlity/Article";
 import CardTitle from "../utitlity/cardTitle";
+import CardContent from "../utitlity/cardContent";
 import FeaturedMedia from "../featured-media";
 
 const ListItemHorizontalSmall = ({ state, item, imageHeight }) => {
@@ -13,16 +14,18 @@ const ListItemHorizontalSmall = ({ state, item, imageHeight }) => {
             <Article className="mb-2" height={imageHeight}>
                 <Flex>
                   <div>
-                  <HoverLink link={item.link}>
-                    {state.theme.featured.showOnList && (
-                      <FeaturedMedia height={imageHeight} width={imageHeight} id={item.featured_media} />
-                    )}
-                  </HoverLink>
+                    <HoverLink link={item.link}>
+                      {state.theme.featured.showOnList && (
+                        <FeaturedMedia height={imageHeight} width={imageHeight} id={item.featured_media} />
+                      )}
+                    </HoverLink>
                   </div>
                   <div>
                     <div>
                       <HoverLink link={item.link}>
-                        <CardTitle margin=".5rem" title={item.title.rendered} />
+                        <CardContent>
+                          <CardTitle title={item.title.rendered} />
+                        </CardContent>
                       </HoverLink>
                     </div>
                   </div>

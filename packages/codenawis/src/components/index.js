@@ -61,7 +61,7 @@ const globalStyles = css`
   margin: 0;
   font-family: "Poppins", Roboto,
     "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #fefefe;
+    background-color: #f8f9fa;
   }
   a,
   a:visited {
@@ -72,6 +72,10 @@ const globalStyles = css`
     text-decoration: none;
   }
   
+  .box-shadow {
+    box-shadow: 0px 0px 20px #00000008;
+    background-color: white;
+  }
   .p-relative {
     position: relative;
   }
@@ -85,8 +89,11 @@ const globalStyles = css`
     width: 100%;
     z-index: 10;
     background: linear-gradient(to bottom, rgba(0,0,0,0) , rgba(0,0,0,.6));
-    a {
-      color: white;
+    color: white;
+    transition: all .5s;
+    &:hover {
+      transition: all .5s;
+      height: 100%;
     }
     h2 {
       margin: 0;

@@ -20,18 +20,18 @@ const ListItemOverlay = ({ state, item, imageHeight }) => {
                         <FeaturedMedia height={imageHeight} id={item.featured_media} />
                     )}
                 </div>
-                <div className="overlay">
-                    <CardContent>
-                        <HoverLink link={item.link}>
+                <HoverLink link={item.link}>
+                    <div className="overlay">
+                        <CardContent>
                             <CardTitle title={item.title.rendered} />
-                        </HoverLink>
-                        {author && (
-                        <Author authorId={item.author} />
-                        )}
-                        &nbsp;-&nbsp;
-                        <PubDate post={item} />
-                    </CardContent>
-                </div>
+                            {author && (
+                            <Author authorId={item.author} />
+                            )}
+                            &nbsp;-&nbsp;
+                            <PubDate post={item} />
+                        </CardContent>
+                    </div>
+                </HoverLink>
             </Article>
   );
 };

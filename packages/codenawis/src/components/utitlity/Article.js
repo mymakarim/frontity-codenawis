@@ -21,19 +21,20 @@ const ArticleCss = styled.div`
     "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
   overflow: hidden;
-
+  transition: all .2s;
   display: flex !important;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  &.border-0 {
+    border: 0;
+  }
   &.mb-2 {
     margin-bottom: 20px;
   }
   &.mb-4 {
     margin-bottom: 40px;
   }
-  transition: all .2s;
-
   &:hover {
     transition: all .2s;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);

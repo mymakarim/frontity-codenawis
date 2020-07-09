@@ -15,19 +15,19 @@ export const categoryWidgets = [
     length: 6
   },
   {
-    id: 276,
-    slug: "exclusive-interviews",
-    length: 2
-  },
-  {
     id: 41,
     slug: "featured",
-    length: 5
+    length: 4
+  },
+  {
+    id: 276,
+    slug: "exclusive-interviews",
+    length: 3
   },
   {
     id: 319,
     slug: "opinion/letters",
-    length: 4
+    length: 10
   },
   {
     id: 379,

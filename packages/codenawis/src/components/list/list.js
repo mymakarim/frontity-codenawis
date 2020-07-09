@@ -13,25 +13,34 @@ const List = ({ state }) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
   const postsPerCategory = getPostsGroupedByCategory(state.source);
+
+  const homepageWidgets = [];
   
   const opinionWidgets = [
     {
       grid: "m6",
       name: "listItemOverlay",
+      howmany: 1,
+      flex: "none"
+    },
+    {
+      grid: "m6",
+      name: "listItem",
+      howmany: 2,
+      flex: "row"
+    },
+    {
+      grid: "m6",
+      name: "listItemHorizontal",
       howmany: 2,
       flex: "column"
     },
     {
-      grid: "m3",
+      grid: "m6",
       name: "listItem",
-      howmany: 2,
-      flex: "column"
-    },
-    {
-      grid: "m3",
-      name: "listItem",
-      howmany: 2,
-      flex: "column"
+      howmany: 1,
+      flex: "none",
+      imageHeight: "180px",
     }
   ];
 
@@ -68,56 +77,20 @@ const List = ({ state }) => {
 
   const interviews = [
     {
-      grid: "m6",
+      grid: "m12",
       name: "listItem",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m6",
-      name: "listItem",
-      howmany: 1,
-      flex: "none"
+      howmany: 3,
+      flex: "row"
     }
   ];
 
   const newsWidgets = [
     {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 1,
-      flex: "none"
-    },
-    {
-      grid: "m4",
-      name: "listItemHorizontalSmall",
-      howmany: 1,
-      flex: "none"
-    },
+      grid: "m12",
+      name: "listItemHorizontal",
+      howmany: 8,
+      flex: "column"
+    }
   ];
 
   const bookReviewWidgets = [
@@ -128,31 +101,107 @@ const List = ({ state }) => {
       flex: "none",
       imageHeight: "300px"
     }
-  ]
+  ];
+
+  const lettersWidgets = [
+    {
+      grid: "m3",
+      name: "listItemOverlay",
+      howmany: 1,
+      flex: "none",
+      imageHeight: "310px",
+    },
+    {
+      grid: "m3",
+      name: "listItemNoImage",
+      howmany: 4,
+      flex: "column"
+    },
+    {
+      grid: "m3",
+      name: "listItemOverlay",
+      howmany: 1,
+      flex: "none",
+      imageHeight: "310px",
+    },
+    {
+      grid: "m3",
+      name: "listItemNoImage",
+      howmany: 4,
+      flex: "column"
+    }
+  ];
   
   const multimediaWidgets = [
     {
-      grid: "m6",
+      grid: "m12",
       name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "440px"
-    },
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 2,
+      howmany: 4,
       flex: "column",
-      imageHeight: "210px"
-    },
-    {
-      grid: "m3",
-      name: "listItemOverlay",
-      howmany: 1,
-      flex: "none",
-      imageHeight: "440px"
+      imageHeight: "250px"
     }
   ];
+
+  const sections = [
+    {
+      grid: "m8",
+      widget: newsWidgets,
+      slug: "news"
+    },
+    {
+      grid: "m4",
+      widget: multimediaWidgets,
+      "slug": "multimedia"
+    }
+  ];
+
+  const populateHomepageWidgets = async ()=>{
+    sections.map((section, index)=>{
+      console.log("Section", index);
+      let thePostsCategory = postsPerCategory.filter(function (postsCategory) {
+        return postsCategory.category.slug === section.slug;
+      });
+      homepageWidgets.push(
+        <Col className={section.grid}>
+          <div className="box-shadow">
+            <Col className="m12">
+              {
+                getWidget(thePostsCategory, section.widget)
+              }
+            </Col>
+          </div>
+        </Col>
+      );
+
+    })
+  }
+
+  const getWidget = (postsCategory, widget)=>{
+    switch (postsCategory[0].category.slug) {
+      case "featured":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      case "multimedia":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      case "news":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      case "exclusive-interviews":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      case "opinion":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      case "book-review":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      case "letters":
+        return <Section6332 key={ postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} widgets={widget} />
+      default:
+        return <Section444 key={postsCategory[0].category.name} category={postsCategory[0].category} postsCategory={postsCategory[0]} />
+    }
+  }
+
+  { data.route === '/' ?
+    populateHomepageWidgets().then(()=>{
+      console.log("POPULATED");
+    }) : console.log("DONT POPULATE")
+  }
 
   return (
     <Container>
@@ -181,30 +230,10 @@ const List = ({ state }) => {
 
       {/* Iterate over the items of the list. */}
       <div>
-        <br/>
           {data.route === '/' 
-          ? postsPerCategory.map((postsCategory, index) => {
-              if(postsCategory.category){
-                switch (postsCategory.category.slug) {
-                  case "featured":
-                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={featuredWidgets} />
-                  case "multimedia":
-                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={multimediaWidgets} />
-                  case "news":
-                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={newsWidgets} />
-                  case "exclusive-interviews":
-                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={interviews} />
-                  case "opinion":
-                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={opinionWidgets} />
-                  case "book-review":
-                    return <Section6332 key={ postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} widgets={bookReviewWidgets} />
-                  default:
-                    return <Section444 key={postsCategory.category.name} category={postsCategory.category} postsCategory={postsCategory} />
-                }
-              }else{
-                return <span key={index}></span>;
-              }
-          })
+          ? <Row>
+              { homepageWidgets }
+            </Row>
           :<Row>
             {data.items.map(({ type, id }) => {
               const item = state.source[type][id];

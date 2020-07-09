@@ -1,6 +1,6 @@
 import React from "react";
 import HoverLink from "../../../utitlity/HoverLink";
-import FlexBetween from "../../../utitlity/FlexBetween";
+import {styled} from 'frontity';
 
 const SectionTitle = ({ category }) => {
   return (
@@ -14,5 +14,12 @@ const SectionTitle = ({ category }) => {
     </HoverLink>
   );
 };
+
+const FlexBetween = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export default SectionTitle

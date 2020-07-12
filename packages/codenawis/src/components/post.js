@@ -10,7 +10,11 @@ import Container from "./utitlity/Container";
 import Avatar from "./utitlity/avatar";
 import FlexBetween from "./utitlity/FlexBetween";
 import FlexCenter from "./utitlity/FlexCenter";
-import SharingButtons from "./meta/SharingButtons";
+
+// install and import my sharing package for frontity
+// https://www.npmjs.com/package/frontity-share
+import SharingButtons from 'frontity-share';
+
 
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
@@ -89,7 +93,7 @@ const Post = ({ state, actions, libraries }) => {
           <div>
             <Tags tags={post.tags} />
           </div>
-          <SharingButtons link={state.router.link} title={post.title.rendered} />
+          <SharingButtons />
         </FlexBetween>
       </Content>
       {/* Author Box */}

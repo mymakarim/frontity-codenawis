@@ -36,6 +36,10 @@ const settings = {
             [
               "Black Blazer",
               "/category/black-blazer/"
+            ],
+            [
+              "External Link",
+              "https://github.com/mymakarim"
             ]
           ],
           "featured": {
@@ -54,7 +58,8 @@ const settings = {
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "frontity-share"
   ]
 };
 

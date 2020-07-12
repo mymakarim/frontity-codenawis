@@ -22,6 +22,7 @@
     "@frontity/html2react": "^1.3.4",
     "@frontity/tiny-router": "^1.2.1",
     "@frontity/wp-source": "^1.8.0",
-    "frontity": "^1.10.0"
+    "frontity": "^1.10.0",
+    "frontity-share": "^0.1.0"
   }
 }

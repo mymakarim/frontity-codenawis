@@ -1,8 +1,16 @@
 import React from 'react'
 import {styled, connect} from 'frontity';
 
-const SharingButtons = ({state, link, title}) => {
-    const url = state.frontity.url;
+const SharingButtons = ({state}) => {
+
+  // Get information about the current URL.
+  const data = state.source.get(state.router.link);
+  // Get the data of the post.
+  const post = state.source[data.type][data.id];
+  const link = state.router.link;
+  const title = post.title.rendered;
+  const url = state.frontity.url;
+  
     return (
         <SharingButton>
             <a target="_blank" href={`http://www.facebook.com/share.php?u=${url}${link}&title=${title}`}>

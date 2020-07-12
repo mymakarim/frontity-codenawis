@@ -24,8 +24,6 @@ const Post = ({ state, actions, libraries }) => {
   
   const url = state.frontity.url;
 
-
-
   // install frontity-share package (Developed by @mymakarim) 
   // use it from the libraries' fills
   const SharingButtons = libraries.fills.share.SharingButtons;
@@ -78,7 +76,7 @@ const Post = ({ state, actions, libraries }) => {
                 )}
 
                   {/** If there is a share package, show all the buttons **/}
-                  {state.share && <SharingButtons />}
+                  {<SharingButtons />}
 
             </FlexBetween>
           </MY2>
@@ -101,7 +99,7 @@ const Post = ({ state, actions, libraries }) => {
           {/* <SharingButtons /> */}
 
           {/** If there is a share package, show all the buttons **/}
-          {state.share && <SharingButtons />}
+          {<SharingButtons />}
 
 
         </FlexBetween>

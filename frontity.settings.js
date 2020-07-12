@@ -47,7 +47,15 @@ const settings = {
             "showOnPost": true
           }
         }
-      }
+      },
+      fills: {
+        share: {
+          ShareAfterPostContent: {
+            slot: "After Post Content",
+            library: "share.SharingButtons",
+          },
+        },
+      },
     },
     {
       "name": "@frontity/wp-source",

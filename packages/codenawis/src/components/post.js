@@ -11,11 +11,6 @@ import Avatar from "./utitlity/avatar";
 import FlexBetween from "./utitlity/FlexBetween";
 import FlexCenter from "./utitlity/FlexCenter";
 
-// install and import my sharing package for frontity
-// https://www.npmjs.com/package/frontity-share
-import SharingButtons from 'frontity-share';
-
-
 const Post = ({ state, actions, libraries }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
@@ -28,6 +23,14 @@ const Post = ({ state, actions, libraries }) => {
   const Html2React = libraries.html2react.Component;
   
   const url = state.frontity.url;
+
+
+
+  // install frontity-share package (Developed by @mymakarim) 
+  // use it from the libraries' fills
+  const SharingButtons = libraries.fills.share.SharingButtons;
+
+  // end share package as library
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -73,8 +76,10 @@ const Post = ({ state, actions, libraries }) => {
                     </div>
                   </FlexCenter>
                 )}
-                {/* <Categories cats={post.categories} /> */}
-              <SharingButtons link={state.router.link} title={post.title.rendered} />
+
+                  {/** If there is a share package, show all the buttons **/}
+                  {state.share && <SharingButtons />}
+
             </FlexBetween>
           </MY2>
         )}
@@ -93,7 +98,12 @@ const Post = ({ state, actions, libraries }) => {
           <div>
             <Tags tags={post.tags} />
           </div>
-          <SharingButtons />
+          {/* <SharingButtons /> */}
+
+          {/** If there is a share package, show all the buttons **/}
+          {state.share && <SharingButtons />}
+
+
         </FlexBetween>
       </Content>
       {/* Author Box */}

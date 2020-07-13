@@ -40,6 +40,10 @@ const settings = {
             [
               "External Link",
               "https://github.com/mymakarim"
+            ],
+            [
+              "About Us",
+              "/about"
             ]
           ],
           "featured": {

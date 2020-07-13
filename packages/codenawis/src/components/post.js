@@ -50,12 +50,12 @@ const Post = ({ state, actions, libraries }) => {
           <meta property="og:url" content={url + state.router.link} />
           <meta property="og:title" content={ post.title.rendered } />
           <meta property="og:description" content={ post.excerpt.rendered } />
-          <meta property="og:image" content={state.source.attachment[post.featured_media].source_url} />
+          <meta property="og:image" content={state.source.attachment[post.featured_media]?.source_url} />
 
           <meta property="twitter:url" content={url + state.router.link} />
           <meta property="twitter:title" content={ post.title.rendered } />
           <meta property="twitter:description" content={ post.excerpt.rendered } />
-          <meta property="twitter:image" content={state.source.attachment[post.featured_media].source_url} ></meta>
+          <meta property="twitter:image" content={state.source.attachment[post.featured_media]?.source_url} ></meta>
           <meta name="twitter:card" content="summary_large_image" />
     </Head>
       <PostContainer>
@@ -83,7 +83,7 @@ const Post = ({ state, actions, libraries }) => {
         )}
         {/* Look at the settings to see if we should include the featured image */}
         {state.theme.featured.showOnPost && (
-          <img src={state.source.attachment[post.featured_media].source_url} alt=""/>
+          <img src={state.source.attachment[post.featured_media]?.source_url} alt=""/>
         )}
       </PostContainer>
 
@@ -94,9 +94,9 @@ const Post = ({ state, actions, libraries }) => {
         <br></br>
         <FlexBetween>
           <div>
-            <Tags tags={post.tags} />
+            { post.tags && <Tags tags={post.tags} /> }
           </div>
-          {/* <SharingButtons /> */}
+          <SharingButtons />
 
           {/** If there is a share package, show all the buttons **/}
           {<SharingButtons />}

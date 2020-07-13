@@ -96,8 +96,6 @@ const Post = ({ state, actions, libraries }) => {
           <div>
             { post.tags && <Tags tags={post.tags} /> }
           </div>
-          <SharingButtons />
-
           {/** If there is a share package, show all the buttons **/}
           {<SharingButtons />}
 

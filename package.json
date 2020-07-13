@@ -23,6 +23,7 @@
     "@frontity/tiny-router": "^1.2.1",
     "@frontity/wp-source": "^1.8.0",
     "frontity": "^1.9.0",
+    "frontity-contact-form-7": "^0.1.6",
     "frontity-share": "^0.1.5"
   }
 }

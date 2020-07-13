@@ -44,6 +44,10 @@ const settings = {
             [
               "About Us",
               "/about"
+            ],
+            [
+              "Contact Us",
+              "/contact"
             ]
           ],
           "featured": {
@@ -63,7 +67,8 @@ const settings = {
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
-    "frontity-share"
+    "frontity-share",
+    "frontity-contact-form-7"
   ]
 };
 

@@ -2,9 +2,9 @@ const settings = {
   "name": "CodeNawis - Fashion Jackson",
   "state": {
     "frontity": {
-      "url": "https://newschin.mymakarim.vercel.app",
-      "title": "CodeNawis",
-      "description": "A NextJs clone of FashionJackson.com"
+      "url": "https://componentity.com",
+      "title": "Componentity",
+      "description": "Thousands of Components Ready to be Copy-Pasted"
     }
   },
   "packages": [
@@ -61,7 +61,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://fashionjackson.com/wp-json"
+          "api": "http://codenawis.com/componentity/wp-json"
         }
       }
     },

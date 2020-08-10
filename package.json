@@ -17,13 +17,13 @@
   },
   "prettier": {},
   "dependencies": {
-    "@frontity/codenawis": "./packages/codenawis",
-    "@frontity/core": "^1.7.2",
+    "@frontity/core": "^1.7.3",
     "@frontity/html2react": "^1.3.4",
+    "@frontity/codenawis": "./packages/codenawis",
     "@frontity/tiny-router": "^1.2.1",
-    "@frontity/wp-source": "^1.8.0",
-    "frontity": "^1.9.0",
-    "frontity-contact-form-7": "^0.1.6",
+    "@frontity/wp-source": "^1.8.1",
+    "frontity": "^1.10.1",
+    "frontity-contact-form-7": "^0.1.7",
     "frontity-share": "^0.1.5"
   }
 }
